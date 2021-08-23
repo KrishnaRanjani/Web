@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Krishnaranjani</title>
+
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <style>
+    body {
+      background-color: #f5f5f5;
+      color: #4e4e4e;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #1e1e1e;
+    }
+
+    a {
+      color: #1e1e1e;
+      text-decoration: none;
+      transition: all 0.5s ease-in-out;
+    }
+
+    a:hover {
+      color: #3B3B3B;
+      text-decoration: none;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .p-r {
+      position: relative;
+    }
+
+    .color-a {
+      text-decoration: none;
+      color: #3B3B3B;
+    }
+
+    .color-d {
+      color: #f5f5f5;
+    }
+
+    .color-text-a {
+      text-decoration: none;
+      color: #4e4e4e;
+    }
+
+    .box-shadow,
+    .paralax-mf,
+    .service-box,
+    .work-box,
+    .card-blog {
+      box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+    }
+
+    .box-shadow-a,
+    .button:hover {
+      text-decoration: none;
+      box-shadow: 0 0 0 4px #cde1f8;
+    }
+
+    .display-5 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      line-height: 1.1;
+    }
+
+    .display-6 {
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 1.1;
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      margin-right: 4px;
+      overflow: hidden;
+    }
+
+    .bg-image {
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    @media (max-width: 1024px) {
+      .bg-image {
+        background-attachment: scroll;
+      }
+    }
+
+    .overlay-mf {
+      background-color: #3B3B3B;
+    }
+
+    .overlay-mf {
+      position: absolute;
+      top: 0;
+      left: 0px;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      opacity: .7;
+    }
+
+    .paralax-mf {
+      position: relative;
+      padding: 8rem 0;
+    }
+
+    .display-table {
+      width: 100%;
+      height: 100%;
+      display: table;
+    }
+
+    .table-cell {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    /*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+
+    .bnavbar {
+      padding: 0;
+      background-color: 1e1e1e;
+    }
+
+    .bnavbar ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+
+    .bnavbar li {
+      position: relative;
+    }
+
+    .bnavbar>ul>li {
+      white-space: nowrap;
+      padding: 10px 0 10px 30px;
+    }
+
+    .bnavbar a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 0;
+      white-space: nowrap;
+      transition: 0.3s;
+      letter-spacing: 0.4px;
+      position: relative;
+      text-transform: uppercase;
+    }
+
+    .bnavbar a i,
+    .bnavbar a:focus i {
+
+      font-size: 12px;
+      line-height: 0;
+      margin-left: 5px;
+    }
+
+    .bnavbar>ul>li>a:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      background-color: #fff;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out 0s;
+    }
+
+    .bnavbar a:hover:before,
+    .bnavbar li:hover>a:before,
+    .bnavbar .active:before {
+      visibility: visible;
+      width: 80%;
+    }
+
+    .bnavbar a:hover,
+    .bnavbar .active,
+    .bnavbar .active:focus,
+    .bnavbar li:hover>a {
+      color: #fff;
+    }
+
+    .bnavbar .dropdown ul {
+      display: block;
+      position: absolute;
+      left: 30px;
+      top: calc(100% + 30px);
+      margin: 0;
+      padding: 10px 0;
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      background: #fff;
+      box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+      transition: 0.3s;
+    }
+
+    .bnavbar .dropdown ul li {
+      min-width: 200px;
+    }
+
+    .bnavbar .dropdown ul a {
+      padding: 10px 20px;
+      font-size: 14px;
+      text-transform: none;
+      color: #4e4e4e;
+    }
+
+    .bnavbar .dropdown ul a i {
+      font-size: 12px;
+    }
+
+    .bnavbar .dropdown ul a:hover,
+    .bnavbar .dropdown ul .active:hover,
+    .bnavbar .dropdown ul li:hover>a {
+      color: #3B3B3B;
+    }
+
+    .bnavbar .dropdown:hover>ul {
+      opacity: 1;
+      top: 100%;
+      visibility: visible;
+    }
+
+    .bnavbar .dropdown .dropdown ul {
+      top: 0;
+      left: calc(100% - 30px);
+      visibility: hidden;
+    }
+
+    .bnavbar .dropdown .dropdown:hover>ul {
+      opacity: 1;
+      top: 0;
+      left: 100%;
+      visibility: visible;
+    }
+
+    @media (max-width: 1366px) {
+      .bnavbar .dropdown .dropdown ul {
+        left: -90%;
+      }
+
+      .bnavbar .dropdown .dropdown:hover>ul {
+        left: -100%;
+      }
+    }
+
+    /**
+* Mobile Navigation 
+*/
+    .mobile-nav-toggle {
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+      display: none;
+      line-height: 0;
+      transition: 0.5s;
+    }
+
+
+    @media (max-width: 991px) {
+      .mobile-nav-toggle {
+        display: block;
+        z-index: 1000;
+      }
+
+      .bnavbar ul {
+        display: none;
+      }
+    }
+
+    .bnavbar-mobile {
+      position: fixed;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(78, 78, 78, 0.9);
+      transition: 0.3s;
+      z-index: 999;
+    }
+
+    .bnavbar-mobile .mobile-nav-toggle {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+
+    .bnavbar-mobile ul {
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 55px;
+      /* right: 15px;
+  bottom: 15px;
+  left: 15px; */
+      padding: 10px 0;
+      background-color: rgb(251 251 251);
+      overflow-y: auto;
+      transition: 0.3s;
+    }
+
+    .bnavbar-mobile>ul>li {
+      padding: 0;
+    }
+
+    .bnavbar-mobile a:hover:before,
+    .bnavbar-mobile li:hover>a:before,
+    .bnavbar-mobile .active:before {
+      visibility: hidden;
+    }
+
+    .bnavbar-mobile a {
+      padding: 10px 20px;
+      font-size: 15px;
+      color: #4e4e4e;
+    }
+
+    .bnavbar-mobile a:hover,
+    .bnavbar-mobile .active,
+    .bnavbar-mobile li:hover>a {
+      color: #3B3B3B;
+    }
+
+    .bnavbar-mobile .getstarted {
+      margin: 15px;
+    }
+
+    .bnavbar-mobile .dropdown ul {
+      position: static;
+      display: none;
+      margin: 10px 20px;
+      padding: 10px 0;
+      z-index: 99;
+      opacity: 1;
+      visibility: visible;
+      background: #f9fafb;
+      box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    }
+
+    .bnavbar-mobile .dropdown ul li {
+      min-width: 200px;
+    }
+
+    .bnavbar-mobile .dropdown ul a {
+      padding: 10px 20px;
+    }
+
+    .bnavbar-mobile .dropdown ul a i {
+      font-size: 12px;
+    }
+
+    .bnavbar-mobile .dropdown ul a:hover,
+    .bnavbar-mobile .dropdown ul .active:hover,
+    .bnavbar-mobile .dropdown ul li:hover>a {
+      color: #3B3B3B;
+    }
+
+    .bnavbar-mobile .dropdown>.dropdown-active {
+      display: block;
+      margin-left: 0px !important;
+    }
+
+    .fixed-top {
+      color: #1e1e1e;
+    }
+
+
+    /*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+    #header {
+      transition: all 0.5s;
+      z-index: 997;
+      background-color: black;
+      padding: 20px 0;
+    }
+
+    #header .logo {
+      font-size: 28px;
+      margin: 0;
+      padding: 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    #header .logo a {
+      color: #fff;
+    }
+
+    #header .logo img {
+      max-height: 40px;
+    }
+
+    #header.header-scrolled {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 12px 0;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    /*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+    footer {
+      text-align: center;
+      color: #fff;
+      padding: 25px 0;
+      background: #1e1e1e;
+    }
+
+    footer .copyright {
+      margin-bottom: .3rem;
+    }
+
+    footer .credits {
+      margin-bottom: 0;
+    }
+
+    footer .credits a {
+      color: #fff;
+    }
+
+    /*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+
+    .back-to-top {
+      position: fixed;
+      visibility: hidden;
+      opacity: 0;
+      right: 15px;
+      bottom: 15px;
+      z-index: 996;
+      background: #3B3B3B;
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+      transition: all 0.4s;
+    }
+
+    .back-to-top i {
+      font-size: 28px;
+      color: #fff;
+      line-height: 0;
+    }
+
+    .back-to-top:hover {
+      background: #298eff;
+      color: #fff;
+    }
+
+    .back-to-top.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+
+    /*--------------------------------------------------------------
+# Testminonal
+--------------------------------------------------------------*/
+    @import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800);
+
+    .testimonial2 {
+      font-family: "Montserrat", sans-serif;
+      color: #8d97ad;
+      font-weight: 300;
+    }
+
+    .testimonial2 h1,
+    .testimonial2 h2,
+    .testimonial2 h3,
+    .testimonial2 h4,
+    .testimonial2 h5,
+    .testimonial2 h6 {
+      color: #3e4555;
+    }
+
+    .testimonial2 h5 {
+      line-height: 22px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .testimonial2 .font-weight-medium {
+      font-weight: 500;
+    }
+
+    .testimonial2 .bg-light {
+      background-color: #f4f8fa !important;
+    }
+
+    .testimonial2 .subtitle {
+      color: #8d97ad;
+      line-height: 24px;
+    }
+
+    .testimonial2 .testi2 .image-thumb {
+      background: url(assets/img/test-bg.png) no-repeat top center;
+      text-align: center;
+      padding: 10% 0;
+    }
+
+    .testimonial2 .testi2 .image-thumb img {
+      width: 400px;
+    }
+
+    .testimonial2 .testi2 .owl-dots {
+      display: inline-block;
+      position: relative;
+      top: -100px;
+    }
+
+    .testimonial2 .testi2 .owl-dots .owl-dot {
+      border-radius: 100%;
+      width: 70px;
+      height: 70px;
+      background-size: cover;
+      margin-right: 10px;
+      opacity: 0.4;
+      cursor: pointer;
+    }
+
+    .testimonial2 .testi2 .owl-dots .owl-dot span {
+      display: none;
+    }
+
+    .testimonial2 .testi2 .owl-dots .owl-dot.active,
+    .testimonial2 .testi2 .owl-dots .owl-dot:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 767px) {
+      .testimonial2 .testi2 .owl-dots {
+        top: 0px;
+      }
+    }
+
+    .testimonial2 .btn-md {
+      padding: 18px 0px;
+      width: 60px;
+      height: 60px;
+      font-size: 20px;
+    }
+
+    .testimonial2 .btn-danger1 {
+      background: url(assets/img/test1.png) no-repeat;
+      border: 1px solid #f8f8f8 !important;
+      background-size: contain;
+    }
+
+    .testimonial2 .btn-danger2 {
+      background: url(assets/img/test-2.png) no-repeat;
+      border: 1px solid #f8f8f8 !important;
+      background-size: contain;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+      <i class="bi bi-list mobile-nav-toggle"></i>
+
+      <h1 class="logo"><a href="index.html">Krishnaranjani</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="bnavbar" class="bnavbar">
+        <ul>
+          <li><a class="bnav-link scrollto active " href="index.html">Home</a></li>
+          <li><a class="bnav-link scrollto" href="Resume.html">Resume</a></li>
+          <li><a class="bnav-link scrollto " href="Blog.html">Portfolio</a></li>
+
+          <li class="dropdown "><a href="#"><span>About</span> <i class="bi bi-chevron-down "></i></a>
+            <ul>
+              <li><a href="Experience.html">Journey</a></li>
+              <li><a href="#">Current Research</a></li>
+              <li><a href="Feedback.html">Testimonials</a></li>
+              <li><a href="#">Teaching and Outreach</a></li>
+              <li><a href="#">Reads</a></li>
+              <li><a href="#">Writes</a></li>
+            </ul>
+          </li>
+          <li><a class="bnav-link scrollto" href="contact.html">Contact</a></li>
+
+        </ul>
+
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <main id="main">
+
+    <div class="testimonial2 py-5">
+      <div class="container">
+        <div class="heading">
+        </div>
+        <div class="owl-carousel owl-theme testi2 mt-4">
+          <div class="item">
+            <div class="row position-relative">
+              <div class="col-lg-6 col-md-6 align-self-center">
+                <button class="btn rounded-circle btn-danger1 btn-md"></button>
+                <h4 class="my-3">Rohith JK</h4>
+                <h5 class="mt-4">University of British Columbia</h5>
+                <p>
+                  Krishnaranjani’s is one of the founding members of our institution. She hs worked in various
+                  capacity with our institutions. She is one the best team player , we have in our institutions.
+                  She is technically very sound as well as she handles all the situations with at most care . She
+                  works independently
+                </p>
+
+              </div>
+              <div class="col-lg-6 col-md-6 image-thumb d-none d-md-block">
+                <img src="assets/img/avatar.PNG" alt="wrapkit" class="rounded-circle img-fluid" />
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row position-relative">
+              <div class="col-lg-6 col-md-6 align-self-center">
+                <button class="btn rounded-circle btn-danger2 btn-md"><i class="icon-bubble"></i></button>
+                <h4 class="author">Jawahar Prakash</h4>
+                <h5 class="mt-4">Indian Institute of Technology, Madras</h5>
+                <p>
+                  Krishnaranjani is one of the most hardworking persons i have come across in my life. She is
+                  ready to do whatever it takes and learn whatever is needed. I have seen master complex heat
+                  transfer problems within a week even though she is from a computer background. She is good at
+                  doing research and teaching at the same time. Her multitasking ability is very good, she manages
+                  different fields like hr, marketing, technical at the same time. She works very hard in silence.
+                  My organization is very much blessed to have such a loyal person who stands with you in your bad
+                  times.
+                </p>
+
+              </div>
+              <div class="col-lg-6 col-md-6 image-thumb d-none d-md-block">
+                <img src="assets/img/avatar.PNG" alt="wrapkit" class="rounded-circle img-fluid" />
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row position-relative">
+              <div class="col-lg-6 col-md-6 align-self-center">
+                <button class="btn rounded-circle btn-danger2 btn-md"><i class="icon-bubble"></i></button>
+                <h4 class="my-3">Jawahar Prakash</h4>
+                <p>
+                  Indian Institute of Technology, Madras
+                </p>
+              </div>
+              <div class="col-lg-6 col-md-6 image-thumb d-none d-md-block">
+                <img src="assets/img/QUOTE-1.png" alt="wrapkit" class="rounded-circle img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- ======= Footer ======= -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright-box">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/purecounter/purecounter.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.min.js"></script>
+
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
