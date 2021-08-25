@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-
   <title>Krishnaranjani</title>
 
   <link href="assets/img/favicon.png" rel="icon">
@@ -16,9 +15,13 @@
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/owl.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" rel="stylesheet" />
   <style>
     /*--------------------------------------------------------------
 # Navigation Menu
@@ -283,6 +286,7 @@
     }
 
 
+
     /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -322,118 +326,110 @@
       text-align: center;
     }
 
-    .box {
-      background: linear-gradient(-45deg, #5b6166, #3B3B3B, #494848);
-      font-family: 'Raleway', sans-serif;
+    .service-box {
+      background-color: #fff;
+      padding: 2.5rem 1.3rem;
+      border-radius: 1rem;
+      margin-bottom: 3rem;
       text-align: center;
-      overflow: hidden;
-      position: relative;
-      transition: all 0.3s ease-in-out;
     }
 
-    .box:before {
-      content: "";
-      border: 2px solid #fff;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transform: rotate3d(0, 0, 1, 45deg) scale3d(1.5, 0, 1);
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      transition: all .35s;
+    .service-box:hover .ico-circle {
+      transition: all 500ms ease;
+      color: rgb(26, 141, 78);
+      background-color: #fff;
+      box-shadow: 0 0 0 10px #fff;
     }
 
-    .box:hover:before {
-      opacity: 1;
-      transform: rotate3d(0, 0, 1, 45deg) scale3d(1.5, 1, 1);
+    .service-box .service-ico {
+      margin-bottom: 1rem;
+      color: #1e1e1e;
     }
 
-    .box img {
-      width: 100%;
-      height: auto;
-      transform: translate3d(0, 0, 0) scale(1);
-      transition: all 0.5s ease 0s;
+    .service-box .ico-circle {
+      transition: all 500ms ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .box:hover img {
-      opacity: 0.3;
-      transform: translate3d(-12px, 0, 0) scale(1.1) rotate(3deg);
+    .service-box .ico-circle i {
+      line-height: 0;
+      font-size: 40px;
     }
 
-    .box .box-content {
-      color: #fff;
-      width: 100%;
-      padding: 15px 10px;
-      opacity: 0;
-      transform: translateX(-50%) translateY(-50%);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      z-index: 1;
-      transition: all 0.4s ease-in-out;
-    }
-
-    .box:hover .box-content {
-      opacity: 1;
-      transform: translateX(-50%) translateY(-50%);
-    }
-
-    .box .title {
-      font-size: 22px;
-      font-weight: 700;
+    .service-box .s-title {
+      font-size: 1.4rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-      margin: 0 0 3px;
+      text-align: center;
+      padding: .4rem 0;
     }
 
-    .box .post {
-      font-size: 16px;
-      font-weight: 600;
-      font-style: italic;
-      text-transform: capitalize;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-      letter-spacing: 1px;
-      margin: 0 0 10px;
-      display: block;
+    .service-box .s-description {
+      color: #4e4e4e;
     }
 
-    .box .icon {
-      padding: 0;
+    /*--------------------------------------------------------------
+# card
+--------------------------------------------------------------*/
+
+    body {
+      background-color: #eee;
+    }
+
+    .title {
+
+      margin-bottom: 50px;
+      text-transform: uppercase;
+    }
+
+    .card-block {
+      font-size: 1em;
+      position: relative;
       margin: 0;
-      list-style: none;
+      padding: 1em;
+      border: none;
+      border-top: 1px solid rgba(34, 36, 38, .1);
+      box-shadow: none;
+
     }
 
-    .box .icon li {
-      display: inline-block;
-      margin: 0 2px;
+    .card {
+      font-size: 1em;
+      overflow: hidden;
+      padding: 5;
+      border: none;
+      border-radius: .28571429rem;
+      box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+      margin-top: 20px;
     }
 
-    .box .icon li a {
-      color: #3B3B3B;
-      background: rgb(133, 129, 129);
-      font-size: 15px;
-      line-height: 30px;
-      width: 30px;
-      height: 30px;
-      border-radius: 5px;
-      display: block;
-      transition: all .35s;
+    .carousel-indicators li {
+      border-radius: 12px;
+      width: 12px;
+      height: 12px;
+      background-color: #404040;
     }
 
-    .box .icon li a:hover {
-      color: #6C5B7B;
-      background: #fff;
-      box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+    .carousel-indicators li {
+      border-radius: 12px;
+      width: 12px;
+      height: 12px;
+      background-color: #404040;
     }
 
-    @media only screen and (max-width:990px) {
-      .box {
-        margin: 0 0 30px;
-      }
+    .carousel-indicators .active {
+      background-color: white;
+      max-width: 12px;
+      margin: 0 3px;
+      height: 12px;
+    }
+
+
+
+
+    .btn {
+      margin-top: auto;
     }
   </style>
 
@@ -451,16 +447,14 @@
       </i>
 
       <h1 class="logo"><a href="index.html">Krishnaranjani</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="bnavbar" class="bnavbar">
         <ul>
           <li><a class="bnav-link scrollto  " href="index.html">Home</a></li>
           <li><a class="bnav-link scrollto" href="Resume.html">Resume</a></li>
-          <li><a class="bnav-link scrollto active " href="Blog.html">Portfolio</a></li>
+          <li><a class="bnav-link scrollto " href="Blog.html">Portfolio</a></li>
 
-          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown active"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="Experience.html">Journey</a></li>
               <li><a href="#">Current Research</a></li>
@@ -473,6 +467,7 @@
           <li><a class="bnav-link scrollto" href="contact.html">Contact</a></li>
 
         </ul>
+
       </nav><!-- .navbar -->
 
     </div>
@@ -483,120 +478,8 @@
 
 
 
-    <section id="blog" class="blog-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <br>
-              <br>
-              <br>
 
-              <h3 class="title-a">
-                Blog
-              </h3>
-              <h3 class="subtitle-a">
-                The future belongs to those who believe in the beauty of their dreams
-              </h3>
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img box">
-                <a href="Blog-1.html"><img src="assets/img/post-1.jpg" alt="" class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category ">
-                    <h6 class="category">Robotics</h6>
-                  </div>
-                </div>
-                <h3 class="card-title"><a href="Blog-1.html">Environmental Analysis Vechicle</a></h3>
-                <p class="card-description">
-                  Environmental monitoring is indeed a review of the processes and activities
-                  required to track the environmental baseline.
-                </p>
-              </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="#">
-                    <img src="assets/img/profilepic.jpg" alt="" class="avatar rounded-circle">
-                    <span class="author">Krishnaranjani</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="bi bi-clock"></span> 5 min
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img box">
-                <a href="blog-single.html"><img src="assets/img/post-2.jpg" alt="" class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">IoT</h6>
-                  </div>
-                </div>
-                <h3 class="card-title"><a href="blog-single.html">Medicine Tracking System</a></h3>
-                <p class="card-description">
-                  Medicine Tracking System enables medical caretakers or clients to determine timing to take pills, and
-                  the service times for every day.
-                </p>
-              </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="#">
-                    <img src="assets/img/profilepic.jpg" alt="" class="avatar rounded-circle">
-                    <span class="author">Krishnaranjani</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="bi bi-clock"></span> 5 min
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img box">
-                <a href="blog-single.html"><img src="assets/img/post-3.jpg" alt="" class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">Machine Learning</h6>
-                  </div>
-                </div>
-                <h3 class="card-title"><a href="blog-single.html">Defence on cybercrime</a></h3>
-                <p class="card-description">
-                  As the world is increasingly interconnected, everyone shares the responsibility of securing
-                  cyberspace.
 
-                </p>
-              </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="#">
-                    <img src="assets/img/profilepic.jpg" alt="" class="avatar rounded-circle">
-                    <span class="author">Krishnaranjani</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="bi bi-clock"></span> 5 min
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Blog Section -->
 
 
 

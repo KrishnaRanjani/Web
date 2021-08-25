@@ -369,67 +369,105 @@
       color: #4e4e4e;
     }
 
-    /*--------------------------------------------------------------
-# card
---------------------------------------------------------------*/
-
-    body {
-      background-color: #eee;
-    }
-
-    .title {
-
-      margin-bottom: 50px;
-      text-transform: uppercase;
-    }
-
-    .card-block {
-      font-size: 1em;
-      position: relative;
-      margin: 0;
-      padding: 1em;
-      border: none;
-      border-top: 1px solid rgba(34, 36, 38, .1);
-      box-shadow: none;
-
-    }
-
-    .card {
-      font-size: 1em;
-      overflow: hidden;
-      padding: 5;
-      border: none;
-      border-radius: .28571429rem;
-      box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
-      margin-top: 20px;
-    }
-
-    .carousel-indicators li {
-      border-radius: 12px;
-      width: 12px;
-      height: 12px;
-      background-color: #404040;
-    }
-
-    .carousel-indicators li {
-      border-radius: 12px;
-      width: 12px;
-      height: 12px;
-      background-color: #404040;
-    }
-
-    .carousel-indicators .active {
-      background-color: white;
-      max-width: 12px;
-      margin: 0 3px;
-      height: 12px;
-    }
-
-
-
 
     .btn {
       margin-top: auto;
+    }
+
+    .main-timeline {
+      position: relative;
+      transition: all 0.4s ease 0s;
+    }
+
+    .main-timeline:before {
+      content: "";
+      width: 3px;
+      height: 100%;
+      background: #bfbfbf;
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
+
+    .main-timeline .timeline {
+      position: relative;
+    }
+
+    .main-timeline .timeline:before,
+    .main-timeline .timeline:after {
+      content: "";
+      display: block;
+      width: 100%;
+      clear: both;
+    }
+
+    .main-timeline .timeline-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #0a90d7;
+      position: absolute;
+      top: 0;
+      left: 3px;
+      right: 0;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .main-timeline .timeline-content {
+      width: 45%;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: right;
+      -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+      -ms-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease 0s;
+    }
+
+    .main-timeline .date {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 300;
+      color: #fff;
+      padding: 12px 33px;
+      background: #0a90d7;
+      border-radius: 30px;
+    }
+
+    .main-timeline .title {
+      font-size: 24px;
+      font-weight: 500;
+      color: #5c5151;
+      margin-top: 30px;
+    }
+
+    .main-timeline .description {
+      font-size: 14px;
+      color: #606060;
+      line-height: 2;
+    }
+
+    .main-timeline .timeline-content.right {
+      float: right;
+      text-align: left;
+    }
+
+    @media only screen and (max-width: 767px) {
+      .main-timeline:before {
+        left: 0;
+      }
+
+      .main-timeline .timeline-icon {
+        left: -8px;
+        margin: 0;
+      }
+
+      .main-timeline .timeline-content {
+        width: 90%;
+        float: right;
+      }
     }
   </style>
 
@@ -459,8 +497,8 @@
               <li><a href="Experience.html">Journey</a></li>
               <li><a href="#">Current Research</a></li>
               <li><a href="Feedback.html">Testimonials</a></li>
-              <li><a href="#">Teaching and Outreach</a></li>
-              <li><a href="#">Reads</a></li>
+              <li><a href="Teach.html">Teaching and Outreach</a></li>
+              <li><a href="read.html">Reads</a></li>
               <li><a href="#">Writes</a></li>
             </ul>
           </li>
@@ -474,51 +512,161 @@
   </header><!-- End Header -->
 
   <main id="main">
+    <br>
+    <br>
 
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="box-shadow-full">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-5">
+                      <div class="about-img">
+                        <img src="assets/img/profilepic.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-7">
+                      <h5 class="title-left">
+                        Krishnaranjani
+                      </h5>
+                    </div>
 
-    <div class="container py-3">
-      <div class="title h1 text-center">Resume</div>
-      <!-- Card Start -->
-      <div class="card">
-        <div class="row ">
+                  </div>
 
-          <div class="col-md-7 px-3">
-            <div class="card-block px-6">
-              <h4 class="card-title">Horizontal Card with Carousel - Bootstrap 4 </h4>
-              <p class="card-text">
-                The Carousel code can be replaced with an img src, no problem. The added CSS brings shadow to the card
-                and some adjustments to the prev/next buttons and the indicators is rounded now. As in Bootstrap 3
-              </p>
-              <p class="card-text">Made for usage, commonly searched for. Fork, like and use it. Just move the carousel
-                div above the col containing the text for left alignment of images</p>
-              <br>
-              <a href="#" class="mt-auto btn btn-primary">Read hhhh More</a>
-              <a href="#" class="mt-auto btn btn-primary">Read hhhh More</a>
-
-            </div>
-          </div>
-          <!-- Carousel start -->
-          <div class="col-md-5">
-            <div id="CarouselTest" class="carousel slide" data-ride="carousel">
-
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img class="d-block" src="https://picsum.photos/450/300?image=1072" alt="">
                 </div>
+                <div class="col-md-6">
+                  <div class="about-me pt-4 pt-md-0">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        About me
+                      </h5>
+                    </div>
+                    <p class="lead">
+                      &nbsp; &nbsp; &nbsp; I graduated from India in 2020 with a B.E in Computer Science & Engineering.
+                      I also pursuing my Master's degree in India. After some serious self-reflection about my passions
+                      and interests, I
+                      committed to learning
+                      everything I could about machine learning, Neural network, and the tech industry. I recently
+                      expanded my skill set to topics including Simulation and Immersive learning,
+                      and I am excited to keep learning new methods in a challenging and fast-paced environment.
+                    </p>
+
+                  </div>
+                </div>
+
+                <div class="title-box text-center">
+                  <h2 class="subtitle-a">
+
+                    <br>
+                    <br>
+                    My Experience
+                  </h2>
+                  <div class="line-mf"></div>
+                </div>
+                <br>
+                <br>
               </div>
+              <div class="main-timeline">
+                <div class="timeline">
+                  <div class="timeline-icon"></div>
+                  <div class="timeline-content">
+                    <span class="date">Bachelor of engineering</span>
+                    <h4 class="title">Computer Science and Engineering</h4>
+                    <p class="description">
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Duration : June 2016 - May 2020
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; GPA: 9.34 (On a scale of 10.00)
+                    </p>
+
+                  </div>
+                </div>
+
+                <div class="timeline">
+                  <div class="timeline-icon"></div>
+                  <div class="timeline-content right">
+                    <span class="date">Inplant Training</span>
+                    <h4 class="title">Robotics</h4>
+                    <p class="description">
+                      &nbsp; &nbsp; &nbsp; Duration : May 2018-june 2018
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline">
+                  <div class="timeline-icon"></div>
+                  <div class="timeline-content">
+                    <span class="date">Internship</span>
+                    <h4 class="title">Data Analytics </h4>
+                    <p class="description">
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Signifide, Duration June 2020 - July
+                      2020
+                    </p>
+
+                  </div>
+                </div>
+
+                <div class="timeline">
+                  <div class="timeline-icon"></div>
+                  <div class="timeline-content right">
+                    <span class="date">Master of Engineering </span>
+                    <h4 class="title">Computer Science</h4>
+                    <p class="description">
+                      &nbsp; &nbsp; &nbsp; Duration : June 2020-Mar 2022
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline">
+                  <div class="timeline-icon"></div>
+                  <div class="timeline-content">
+                    <span class="date">Director & Research Fellow</span>
+                    <h4 class="title">MSRF </h4>
+                    <p class="description">
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      Madras Scientific Research Foundation (2020 - Present)
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              <section id="services" class="services-mf pt-5 route">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="title-box text-center">
+                        <h2 class="subtitle-a">
+                          More About Me
+                        </h2>
+                        <div class="line-mf"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="lead">
+                    Outside of machine learning and Tech, I enjoy running, biking and Travelling. i am Obsessed with
+                    exploring the world, meeting new people. Travel is the best kind of education  and bring more inspiration so get lost, even if it’s just outside your own doorstep! 
+
+
+                  </p>
+
+                </div>
+              </section><!-- End Services Section -->
+
             </div>
           </div>
-          <!-- End of carousel -->
         </div>
       </div>
-      <!-- End of card -->
-
-    </div>
-
-
-
-
-
+      </div>
+    </section><!-- End About Section -->
 
     <!-- ======= Footer ======= -->
     <footer>

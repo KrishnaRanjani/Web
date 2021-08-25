@@ -853,6 +853,13 @@ a:hover {
   font-size: 3rem;
 }
 
+.hero .hero-titlee {
+  color: #fff;
+  font-weight: 600;
+  font-size: 3rem;
+  font-family:Cursive;
+}
+
 @media (min-width: 768px) {
   .hero .hero-title {
     font-size: 4.5rem;
