@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Krishnaranjani</title>
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <script defer src="assets/fontawesome/js/all.js"></script>
+
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link id="theme-style" href="assets/css/resume.css" rel="stylesheet">
+
+  <style>
+    /*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+
+    .bnavbar {
+      padding: 0;
+      background-color: 1e1e1e;
+    }
+
+    .bnavbar ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+
+    .bnavbar li {
+      position: relative;
+    }
+
+    .bnavbar>ul>li {
+      white-space: nowrap;
+      padding: 10px 0 10px 30px;
+    }
+
+    .bnavbar a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 0;
+      white-space: nowrap;
+      transition: 0.3s;
+      letter-spacing: 0.4px;
+      position: relative;
+      text-transform: uppercase;
+    }
+
+    .bnavbar a i,
+    .bnavbar a:focus i {
+
+      font-size: 12px;
+      line-height: 0;
+      margin-left: 5px;
+    }
+
+    .bnavbar>ul>li>a:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      background-color: #fff;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out 0s;
+    }
+
+    .bnavbar a:hover:before,
+    .bnavbar li:hover>a:before,
+    .bnavbar .active:before {
+      visibility: visible;
+      width: 80%;
+    }
+
+    .bnavbar a:hover,
+    .bnavbar .active,
+    .bnavbar .active:focus,
+    .bnavbar li:hover>a {
+      color: #fff;
+    }
+
+    .bnavbar .dropdown ul {
+      display: block;
+      position: absolute;
+      left: 30px;
+      top: calc(100% + 30px);
+      margin: 0;
+      padding: 10px 0;
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      background: #fff;
+      box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+      transition: 0.3s;
+    }
+
+    .bnavbar .dropdown ul li {
+      min-width: 200px;
+    }
+
+    .bnavbar .dropdown ul a {
+      padding: 10px 20px;
+      font-size: 14px;
+      text-transform: none;
+      color: #4e4e4e;
+    }
+
+    .bnavbar .dropdown ul a i {
+      font-size: 12px;
+    }
+
+    .bnavbar .dropdown ul a:hover,
+    .bnavbar .dropdown ul .active:hover,
+    .bnavbar .dropdown ul li:hover>a {
+      color: #3B3B3B;
+    }
+
+    .bnavbar .dropdown:hover>ul {
+      opacity: 1;
+      top: 100%;
+      visibility: visible;
+    }
+
+    .bnavbar .dropdown .dropdown ul {
+      top: 0;
+      left: calc(100% - 30px);
+      visibility: hidden;
+    }
+
+    .bnavbar .dropdown .dropdown:hover>ul {
+      opacity: 1;
+      top: 0;
+      left: 100%;
+      visibility: visible;
+    }
+
+    @media (max-width: 1366px) {
+      .bnavbar .dropdown .dropdown ul {
+        left: -90%;
+      }
+
+      .bnavbar .dropdown .dropdown:hover>ul {
+        left: -100%;
+      }
+    }
+
+    /**
+* Mobile Navigation 
+*/
+    .mobile-nav-toggle {
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+      display: none;
+      line-height: 0;
+      transition: 0.5s;
+    }
+
+
+    @media (max-width: 991px) {
+      .mobile-nav-toggle {
+        display: block;
+        z-index: 1000;
+      }
+
+      .bnavbar ul {
+        display: none;
+      }
+    }
+
+    .bnavbar-mobile {
+      position: fixed;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(78, 78, 78, 0.9);
+      transition: 0.3s;
+      z-index: 999;
+    }
+
+    .bnavbar-mobile .mobile-nav-toggle {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+
+    .bnavbar-mobile ul {
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 55px;
+      /* right: 15px;
+  bottom: 15px;
+  left: 15px; */
+      padding: 10px 0;
+      background-color: rgb(251 251 251);
+      overflow-y: auto;
+      transition: 0.3s;
+    }
+
+    .bnavbar-mobile>ul>li {
+      padding: 0;
+    }
+
+    .bnavbar-mobile a:hover:before,
+    .bnavbar-mobile li:hover>a:before,
+    .bnavbar-mobile .active:before {
+      visibility: hidden;
+    }
+
+    .bnavbar-mobile a {
+      padding: 10px 20px;
+      font-size: 15px;
+      color: #4e4e4e;
+    }
+
+    .bnavbar-mobile a:hover,
+    .bnavbar-mobile .active,
+    .bnavbar-mobile li:hover>a {
+      color: #3B3B3B;
+    }
+
+    .bnavbar-mobile .getstarted {
+      margin: 15px;
+    }
+
+    .bnavbar-mobile .dropdown ul {
+      position: static;
+      display: none;
+      margin: 10px 20px;
+      padding: 10px 0;
+      z-index: 99;
+      opacity: 1;
+      visibility: visible;
+      background: #f9fafb;
+      box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    }
+
+    .bnavbar-mobile .dropdown ul li {
+      min-width: 200px;
+    }
+
+    .bnavbar-mobile .dropdown ul a {
+      padding: 10px 20px;
+    }
+
+    .bnavbar-mobile .dropdown ul a i {
+      font-size: 12px;
+    }
+
+    .bnavbar-mobile .dropdown ul a:hover,
+    .bnavbar-mobile .dropdown ul .active:hover,
+    .bnavbar-mobile .dropdown ul li:hover>a {
+      color: #3B3B3B;
+    }
+
+    .bnavbar-mobile .dropdown>.dropdown-active {
+      display: block;
+      margin-left: 0px !important;
+    }
+
+    .fixed-top {
+      color: #1e1e1e;
+    }
+
+
+
+    /*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+    #header {
+      transition: all 0.5s;
+      z-index: 997;
+      background-color: black;
+      padding: 20px 0;
+    }
+
+    #header .logo {
+      font-size: 28px;
+      margin: 0;
+      padding: 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    #header .logo a {
+      color: #fff;
+    }
+
+    #header .logo img {
+      max-height: 40px;
+    }
+
+    #header.header-scrolled {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 12px 0;
+    }
+
+
+    /*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+
+    footer {
+      text-align: center;
+      color: #fff;
+      padding: 25px 0;
+      background: #1e1e1e;
+    }
+
+    footer .copyright {
+      margin-bottom: .3rem;
+    }
+
+    footer .credits {
+      margin-bottom: 0;
+    }
+
+    footer .credits a {
+      color: #fff;
+    }
+
+    /*--------------------------------------------------------------
+  # Back to top button
+  --------------------------------------------------------------*/
+
+    .back-to-top {
+      position: fixed;
+      visibility: hidden;
+      opacity: 0;
+      right: 15px;
+      bottom: 15px;
+      z-index: 996;
+      background: #3B3B3B;
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+      transition: all 0.4s;
+    }
+
+    .back-to-top i {
+      font-size: 28px;
+      color: #fff;
+      line-height: 0;
+    }
+
+    .back-to-top:hover {
+      background: #298eff;
+      color: #fff;
+    }
+
+    .back-to-top.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .textjustify {
+      text-align: justify;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+      <i class="bi bi-list mobile-nav-toggle"></i>
+
+
+      <h1 class="logo"><a href="index.html">Krishnaranjani</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="bnavbar" class="bnavbar">
+        <ul>
+          <li><a class="bnav-link scrollto  " href="index.html">Home</a></li>
+          <li><a class="bnav-link scrollto active " href="mainresearch.html">Research</a></li>
+          <li><a class="bnav-link scrollto " href="Blog.html">Portfolio</a></li>
+          <li><a class="bnav-link scrollto" href="Resume.html">Resume</a></li>
+          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="Experience.html">Bio</a></li>
+              <li><a href="research.html">Current Research</a></li>
+              <li><a href="Feedback.html">Testimonials</a></li>
+              <li><a href="read.html">Reads</a></li>
+            </ul>
+          </li>
+          <li><a class="bnav-link scrollto" href="contact.html">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <br>
+  <br>
+  <br>
+
+  <body>
+    <!-- ******HEADER****** -->
+    <header class="header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col">
+            <div class="profile-content">
+              <h1 class="name">HERE'S WHAT I'VE DONE 🔬 💡
+              </h1>
+            </div>
+            <!--//profile-->
+          </div>
+          <!--//col-->
+          <div class="col-12 col-md-auto">
+            <div class="dark-mode-switch d-flex">
+              <div class="form-check form-switch mx-auto mx-md-0">
+                <input type="checkbox" class="form-check-input me-2" id="darkSwitch" />
+                <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+              </div>
+            </div>
+            <!--//dark-mode-switch-->
+
+          </div>
+          <!--//col-->
+        </div>
+        <!--//row-->
+      </div>
+      <!--//container-->
+    </header>
+    <!--//header-->
+
+    <div class="container sections-wrapper py-5">
+      <div class="row">
+        <div class="primary col-lg-8 col-12">
+          <section class="about section">
+            <div class="section-inner shadow-sm rounded">
+              <h2 class="heading">Research Experience </h2>
+              <div class="content">
+                <p class="m-md-2">
+
+                  <li> Director & Research Fellow - Madras Scientific Research Foundation (2020- Present) </li>
+                  <li> Masters Research (2020 - Current)</li>
+                  <li> Undergraduate Research (2019 - 2020)</li>
+
+                </p>
+
+              </div>
+              <!--//content-->
+            </div>
+            <!--//section-inner-->
+          </section>
+          <!--//section-->
+
+          <section class="experience section">
+            <div class="section-inner shadow-sm rounded">
+              <h2 class="heading">Publications</h2>
+              <hr>
+              <div class="content">
+                <div class="item">
+                  <h3 class="heading">Journals</h3>
+                  <div class="content">
+                    <ul class="list-unstyled">
+                      <li><i class="fas fa-link justify-content-xl-between"></i>
+                        S.Nithya, R
+                        . Krishnaranjani
+                        , V.Kirubakaran
+                        , R. Madhu vaishnavi, GPS Controlled Robotic Vehicle for
+                        Environmental Impact Analysis, International Journal of Innovative Research in Science,
+                        Engineering and Technology, Vol. 9, Issue 3, March 2020. (Impact Factor: 7.569)
+                      </li>
+                    </ul>
+                  </div>
+
+                  <hr>
+                  <div class="content">
+                    <div class="item">
+                      <h3 class="heading">Conferences</h3>
+                      <div class="content">
+                        <ul class="list-unstyled">
+                          <li><i class="fas fa-link justify-content-xl-between"></i>
+                            National Conference on Big Data Analytics for Cyber Intelligence and Defense on Cyber
+                            -crimes against Women
+                          </li>
+                          <li><i class="fas fa-link justify-content-xl-between"></i>
+                            National Conference on Computing Communication Technology and Science (NCCCTS’20)
+                          </li>
+                          <li><i class="fas fa-link justify-content-xl-between"></i>
+                            Industry Standard 4.0- Disruptive Technology Summit</li>
+                        </ul>
+                      </div>
+
+
+
+
+                    </div>
+                    <!--//content-->
+                  </div>
+                  <!--//section-inner-->
+          </section>
+
+          <section class="latest section">
+            <div class="section-inner shadow-sm rounded">
+              <h2 class="heading">Latest Projects</h2>
+              <div class="content">
+
+                <div class="item featured text-center">
+
+                  <div class="featured-image has-ribbon">
+
+                    <img class="img-fluid project-image rounded shadow-sm" src="assets/img/3dprint.png"
+                      alt="project name" />
+                    </a>
+
+                  </div>
+
+                  <h3 class="title mb-3"><a href="" target="_blank">Modeling Cognitive System with Applied Machine
+                      learning in Additive Manufacturing using Fifth Generation Computer Systems</a></h3>
+
+                  <div class="desc textjustify ">
+                    <p> &nbsp &nbsp Industry 4.0 promotes the growth of automation and the integration of intelligent
+                      production systems. A novel method that promotes the growth of automation and Model a cognitive
+                      system with applied machine learning approaches to determine the emotional state of Carnatic
+                      music. The stacking classifier model performs an enhanced classification of emotions from ragas
+                      because of its stacked architecture. This study promotes a data-driven production system with the
+                      fourth industrial revolution and builds the material layer by layer by depositing material
+                      according to digital three-Dimensional design data with the classified emotion. </p>
+                  </div>
+                  <!--//desc-->
+                  <a class="btn btn-cta-secondary" href="research.html" target="_blank"><i
+                      class="fas fa-paper-plane"></i> Current Research</a>
+                </div>
+                <!--//item-->
+                <hr class="divider" />
+                <div class="item row">
+                  <a class="col-md-4 col-12" href="" target="_blank">
+                    <img class="img-fluid project-image rounded shadow-sm" src="assets/img/Medicinetrack.png"
+                      alt="project name" />
+                  </a>
+                  <div class="desc col-md-8 col-12">
+                    <h3 class="title"><a href="" target="_blank">Medicine tracking with IoT System </a>
+                    </h3>
+                    <p class="mb-2 textjustify"> &nbsp &nbsp Medicine tracking system enables medical caretakers or
+                      clients to determine timing
+                      to take pills, and the service times for every day. it focused on patients who frequently take
+                      medications or vitamin supplements, or attendants who deal with the more seasoned or patients.
+                      Tracking system is a tool which will enable the owner to track
+                      every pill to ingest in an easy and simple way requiring no training or complex learning from
+                      their side in order to operate the device. It productively controls the season of senior citizens
+                      to take medication
+
+                    </p>
+                    <p><a class="more-link" href="" target="_blank"><i class="fas fa-external-link-alt"></i>Know
+                        More</a></p>
+                  </div>
+                  <!--//desc-->
+                </div>
+                <!--//item-->
+
+                <div class="item row">
+                  <a class="col-md-4 col-12" href="Blog-1.html" target="_blank">
+                    <img class="img-fluid project-image rounded shadow-sm" src="assets/img/gpsproject.jpg"
+                      alt="project name" />
+                  </a>
+                  <div class="desc col-md-8 col-12">
+                    <h3 class="title"><a href="Blog-1.html" target="_blank">GPS Controlled Robotic Vehicle for
+                        Environmental Impact Analysis </a></h3>
+                    <p class="mb-2 textjustify">&nbsp&nbspDesigned an automated vehicle for monitoring environmental
+                      Parameters.
+                      Navigation and Control, IoT Gateway, Visualization modules were developed.
+                      Robotic vehicle is designed in a way to provide autonomous movement which is controlled by an
+                      individual via android application
+                    </p>
+                    <p><a class="more-link" href="Blog-1.html" target="_blank"><i
+                          class="fas fa-external-link-alt"></i>Know More</a></p>
+                  </div>
+                  <!--//desc-->
+                </div>
+                <!--//item-->
+
+                <div class="item row">
+                  <a class="col-md-4 col-12" href="" target="_blank">
+                    <img class="img-fluid project-image rounded shadow-sm" src="assets/img/Edificationgateway.jpg"
+                      alt="project name" />
+                  </a>
+                  <div class="desc col-md-8 col-12">
+                    <h3 class="title"><a href="" target="_blank">Educational Guidance Platform / Gateway</a>
+                    </h3>
+                    <p class="mb-2 textjustify"> &nbsp&nbsp Education is a vital medium of gaining essential information
+                      and skills which
+                      hinges on its ability to obtain noble knowledge and a valued career.
+                      Educational Gateway is an application that helps students/ graduates Based on interest and
+                      qualification, application potentially provides all possible way outs to guide students and
+                      graduates for choosing their privileged career.
+                      Links study opportunities and career choice. Helps the urban students to know the available
+                      courses on time.</p>
+                    <p><a class="more-link" href="" target="_blank"><i class="fas fa-external-link-alt"></i>Know
+                        More</a></p>
+                  </div>
+                  <!--//desc-->
+                </div>
+                <!--//item-->
+              </div>
+              <!--//content-->
+            </div>
+            <!--//section-inner-->
+          </section>
+          <!--//section-->
+
+          <section class="projects section">
+            <div class="section-inner shadow-sm rounded">
+              <h2 class="heading">PERSONAL PROJECTS</h2>
+              <div class="content">
+                <div class="item">
+                  <h3 class="title"><a href="" target="_blank"> Material Point Method for simulation of nozzle flow in
+                      3D print</a> <span class="badge badge-theme">Python</span></h3>
+                  <p class="summary"> &nbsp &nbsp Implemented MPM for the nozzle flow to determine the flow is laminar
+                    flow / turbulent flow with respect to different nozzle flow rate and Size.</p>
+                  <p><a class="more-link" href="" target="_blank"><i class="fas fa-external-link-alt"></i>Know More</a>
+                  </p>
+                </div>
+                <!--//item-->
+                <div class="item">
+                  <h3 class="title"><a href="" target="_blank">Defence on cybercrime against Women</a> <span
+                      class="badge badge-theme">Analytics</span></h3>
+                  <p class="summary"> &nbsp &nbsp Researched machine learning techniques for Defence on cybercrime and
+                    Strategize functional laws across crime
+                    to create awareness. </p>
+                  <p><a class="more-link" href="" target="_blank"><i class="fas fa-external-link-alt"></i>Know More</a>
+                  </p>
+                </div>
+                <!--//item-->
+                <div class="item">
+                  <h3 class="title"><a href="" target="_blank">E Commerce for Online Medicine Shopping</a> <span
+                      class="badge badge-theme">Android, Java</span></h3>
+                  <p class="summary">&nbsp &nbsp Designed and developed an android application for medical emergency
+                    call, Booking and cancellation of appointments, Viewing medical history & order prescriptions and
+                    request for Blood support</p>
+                  <p><a class="more-link" href="" target="_blank"><i class="fas fa-external-link-alt"></i>Know More</a>
+                  </p>
+                </div>
+                <!--//item-->
+
+                <a class="btn btn-cta-secondary" href="#">More on GitHub <i class="fas fa-chevron-right pt-1"></i></a>
+
+              </div>
+              <!--//content-->
+            </div>
+            <!--//section-inner-->
+          </section>
+          <!--//section-->
+
+
+
+        </div>
+        <!--//primary-->
+
+        <div class="secondary col-lg-4 col-12">
+
+          <aside class="education aside section">
+            <div class="section-inner shadow-sm rounded">
+              <h2 class="heading">Research Interests</h2>
+              <div class="content">
+                <ul class="list-unstyled ">
+                  <li><i class="fas fa-link"></i><span class="sr-only"></span> Immersive Learning</li>
+                  <li><i class="fas fa-link"></i><span class="sr-only"></span> Machine Learning</li>
+                  <li><i class="fas fa-link"></i><span class="sr-only"></span> Computer Vision</li>
+                  <li><i class="fas fa-link"></i><span class="sr-only"></span> Industrial 4.0</li>
+                  <li><i class="fas fa-link"></i><span class="sr-only"></span> Quantum Computing</li>
+
+                </ul>
+              </div>
+              <!--//content-->
+            </div>
+            <!--//section-inner-->
+          </aside>
+          <!--//section-->
+
+          <aside class="education aside section">
+            <div class="section-inner shadow-sm rounded">
+              <h2 class="heading">Research Problems of Interests
+              </h2>
+              <div class="content">
+                <ul class="list-unstyled ">
+                  <li><i class="fas fa-cube"></i><span class="sr-only"></span> Scientific simulations</li>
+                  <li><i class="fas fa-cube"></i><span class="sr-only"></span> Natural Language Processing
+                  </li>
+                  <li><i class="fas fa-cube"></i><span class="sr-only"></span> Geospatial Data Analytics</li>
+                  <li><i class="fas fa-cube"></i><span class="sr-only"></span> Internet of Things</li>
+
+
+                </ul>
+              </div>
+              <!--//content-->
+            </div>
+            <!--//section-inner-->
+          </aside>
+          <!--//section-->
+
+        </div>
+        <!--//secondary-->
+      </div>
+      <!--//row-->
+    </div>
+    <!--//masonry-->
+
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+      <div class="container text-center">
+        <!--/* This template is free as long as you keep the attribution link below. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+        <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com"
+            target="_blank">Xiaoying Riley</a> for developers</small>
+      </div>
+      <!--//container-->
+    </footer>
+    <!--//footer-->
+
+
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.min.js"></script>
+    <!-- Javascript -->
+    <script type="text/javascript" src="assets/plugins/popper.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/vanilla-rss/dist/rss.global.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/dark-mode-switch/dark-mode-switch.min.js"></script>
+    <!-- github calendar plugin -->
+    <script type="text/javascript" src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script>
+    <!-- github activity plugin -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/github-activity/src/github-activity.js"></script>
+    <!-- custom js -->
+
+    <script src="assets/js/main.js"></script>
+
+  </body>
+
+
+
+</body>
+
+</html>
