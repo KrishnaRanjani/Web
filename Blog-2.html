@@ -2,962 +2,786 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Krishnaranjani</title>
+  <title>Krishnaranjani</title>
 
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <style>
-        /*--------------------------------------------------------------
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
 
-        .bnavbar {
-            padding: 0;
-            background-color: 1e1e1e;
-        }
+    .bnavbar {
+      padding: 0;
+      background-color: 1e1e1e;
+    }
 
-        .bnavbar ul {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            list-style: none;
-            align-items: center;
-        }
+    .bnavbar ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
 
-        .bnavbar li {
-            position: relative;
-        }
+    .bnavbar li {
+      position: relative;
+    }
 
-        .bnavbar>ul>li {
-            white-space: nowrap;
-            padding: 10px 0 10px 30px;
-        }
+    .bnavbar>ul>li {
+      white-space: nowrap;
+      padding: 10px 0 10px 30px;
+    }
 
-        .bnavbar a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 600;
-            padding: 0;
-            white-space: nowrap;
-            transition: 0.3s;
-            letter-spacing: 0.4px;
-            position: relative;
-            text-transform: uppercase;
-        }
+    .bnavbar a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 0;
+      white-space: nowrap;
+      transition: 0.3s;
+      letter-spacing: 0.4px;
+      position: relative;
+      text-transform: uppercase;
+    }
 
-        .bnavbar a i,
-        .bnavbar a:focus i {
+    .bnavbar a i,
+    .bnavbar a:focus i {
 
-            font-size: 12px;
-            line-height: 0;
-            margin-left: 5px;
-        }
+      font-size: 12px;
+      line-height: 0;
+      margin-left: 5px;
+    }
 
-        .bnavbar>ul>li>a:before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: -6px;
-            left: 0;
-            width: 0;
-            background-color: #fff;
-            visibility: hidden;
-            transition: all 0.3s ease-in-out 0s;
-        }
+    .bnavbar>ul>li>a:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      background-color: #fff;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out 0s;
+    }
 
-        .bnavbar a:hover:before,
-        .bnavbar li:hover>a:before,
-        .bnavbar .active:before {
-            visibility: visible;
-            width: 80%;
-        }
+    .bnavbar a:hover:before,
+    .bnavbar li:hover>a:before,
+    .bnavbar .active:before {
+      visibility: visible;
+      width: 80%;
+    }
 
-        .bnavbar a:hover,
-        .bnavbar .active,
-        .bnavbar .active:focus,
-        .bnavbar li:hover>a {
-            color: #fff;
-        }
+    .bnavbar a:hover,
+    .bnavbar .active,
+    .bnavbar .active:focus,
+    .bnavbar li:hover>a {
+      color: #fff;
+    }
 
-        .bnavbar .dropdown ul {
-            display: block;
-            position: absolute;
-            left: 30px;
-            top: calc(100% + 30px);
-            margin: 0;
-            padding: 10px 0;
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            background: #fff;
-            box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-            transition: 0.3s;
-        }
+    .bnavbar .dropdown ul {
+      display: block;
+      position: absolute;
+      left: 30px;
+      top: calc(100% + 30px);
+      margin: 0;
+      padding: 10px 0;
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      background: #fff;
+      box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+      transition: 0.3s;
+    }
 
-        .bnavbar .dropdown ul li {
-            min-width: 200px;
-        }
+    .bnavbar .dropdown ul li {
+      min-width: 200px;
+    }
 
-        .bnavbar .dropdown ul a {
-            padding: 10px 20px;
-            font-size: 14px;
-            text-transform: none;
-            color: #4e4e4e;
-        }
+    .bnavbar .dropdown ul a {
+      padding: 10px 20px;
+      font-size: 14px;
+      text-transform: none;
+      color: #4e4e4e;
+    }
 
-        .bnavbar .dropdown ul a i {
-            font-size: 12px;
-        }
+    .bnavbar .dropdown ul a i {
+      font-size: 12px;
+    }
 
-        .bnavbar .dropdown ul a:hover,
-        .bnavbar .dropdown ul .active:hover,
-        .bnavbar .dropdown ul li:hover>a {
-            color: #3B3B3B;
-        }
+    .bnavbar .dropdown ul a:hover,
+    .bnavbar .dropdown ul .active:hover,
+    .bnavbar .dropdown ul li:hover>a {
+      color: #3B3B3B;
+    }
 
-        .bnavbar .dropdown:hover>ul {
-            opacity: 1;
-            top: 100%;
-            visibility: visible;
-        }
+    .bnavbar .dropdown:hover>ul {
+      opacity: 1;
+      top: 100%;
+      visibility: visible;
+    }
 
-        .bnavbar .dropdown .dropdown ul {
-            top: 0;
-            left: calc(100% - 30px);
-            visibility: hidden;
-        }
+    .bnavbar .dropdown .dropdown ul {
+      top: 0;
+      left: calc(100% - 30px);
+      visibility: hidden;
+    }
 
-        .bnavbar .dropdown .dropdown:hover>ul {
-            opacity: 1;
-            top: 0;
-            left: 100%;
-            visibility: visible;
-        }
+    .bnavbar .dropdown .dropdown:hover>ul {
+      opacity: 1;
+      top: 0;
+      left: 100%;
+      visibility: visible;
+    }
 
-        @media (max-width: 1366px) {
-            .bnavbar .dropdown .dropdown ul {
-                left: -90%;
-            }
+    @media (max-width: 1366px) {
+      .bnavbar .dropdown .dropdown ul {
+        left: -90%;
+      }
 
-            .bnavbar .dropdown .dropdown:hover>ul {
-                left: -100%;
-            }
-        }
+      .bnavbar .dropdown .dropdown:hover>ul {
+        left: -100%;
+      }
+    }
 
-        /**
+    /**
 * Mobile Navigation 
 */
-        .mobile-nav-toggle {
-            color: #fff;
-            font-size: 28px;
-            cursor: pointer;
-            display: none;
-            line-height: 0;
-            transition: 0.5s;
-        }
+    .mobile-nav-toggle {
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+      display: none;
+      line-height: 0;
+      transition: 0.5s;
+    }
 
 
-        @media (max-width: 991px) {
-            .mobile-nav-toggle {
-                display: block;
-                z-index: 1000;
-            }
+    @media (max-width: 991px) {
+      .mobile-nav-toggle {
+        display: block;
+        z-index: 1000;
+      }
 
-            .bnavbar ul {
-                display: none;
-            }
-        }
+      .bnavbar ul {
+        display: none;
+      }
+    }
 
-        .bnavbar-mobile {
-            position: fixed;
-            overflow: hidden;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            background: rgba(78, 78, 78, 0.9);
-            transition: 0.3s;
-            z-index: 999;
-        }
+    .bnavbar-mobile {
+      position: fixed;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(78, 78, 78, 0.9);
+      transition: 0.3s;
+      z-index: 999;
+    }
 
-        .bnavbar-mobile .mobile-nav-toggle {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-        }
+    .bnavbar-mobile .mobile-nav-toggle {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
 
-        .bnavbar-mobile ul {
-            display: block;
-            position: absolute;
-            width: 100%;
-            top: 55px;
-            /* right: 15px;
+    .bnavbar-mobile ul {
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 55px;
+      /* right: 15px;
   bottom: 15px;
   left: 15px; */
-            padding: 10px 0;
-            background-color: rgb(251 251 251);
-            overflow-y: auto;
-            transition: 0.3s;
-        }
+      padding: 10px 0;
+      background-color: rgb(251 251 251);
+      overflow-y: auto;
+      transition: 0.3s;
+    }
 
-        .bnavbar-mobile>ul>li {
-            padding: 0;
-        }
+    .bnavbar-mobile>ul>li {
+      padding: 0;
+    }
 
-        .bnavbar-mobile a:hover:before,
-        .bnavbar-mobile li:hover>a:before,
-        .bnavbar-mobile .active:before {
-            visibility: hidden;
-        }
+    .bnavbar-mobile a:hover:before,
+    .bnavbar-mobile li:hover>a:before,
+    .bnavbar-mobile .active:before {
+      visibility: hidden;
+    }
 
-        .bnavbar-mobile a {
-            padding: 10px 20px;
-            font-size: 15px;
-            color: #4e4e4e;
-        }
+    .bnavbar-mobile a {
+      padding: 10px 20px;
+      font-size: 15px;
+      color: #4e4e4e;
+    }
 
-        .bnavbar-mobile a:hover,
-        .bnavbar-mobile .active,
-        .bnavbar-mobile li:hover>a {
-            color: #3B3B3B;
-        }
+    .bnavbar-mobile a:hover,
+    .bnavbar-mobile .active,
+    .bnavbar-mobile li:hover>a {
+      color: #3B3B3B;
+    }
 
-        .bnavbar-mobile .getstarted {
-            margin: 15px;
-        }
+    .bnavbar-mobile .getstarted {
+      margin: 15px;
+    }
 
-        .bnavbar-mobile .dropdown ul {
-            position: static;
-            display: none;
-            margin: 10px 20px;
-            padding: 10px 0;
-            z-index: 99;
-            opacity: 1;
-            visibility: visible;
-            background: #f9fafb;
-            box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-        }
+    .bnavbar-mobile .dropdown ul {
+      position: static;
+      display: none;
+      margin: 10px 20px;
+      padding: 10px 0;
+      z-index: 99;
+      opacity: 1;
+      visibility: visible;
+      background: #f9fafb;
+      box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    }
 
-        .bnavbar-mobile .dropdown ul li {
-            min-width: 200px;
-        }
+    .bnavbar-mobile .dropdown ul li {
+      min-width: 200px;
+    }
 
-        .bnavbar-mobile .dropdown ul a {
-            padding: 10px 20px;
-        }
+    .bnavbar-mobile .dropdown ul a {
+      padding: 10px 20px;
+    }
 
-        .bnavbar-mobile .dropdown ul a i {
-            font-size: 12px;
-        }
+    .bnavbar-mobile .dropdown ul a i {
+      font-size: 12px;
+    }
 
-        .bnavbar-mobile .dropdown ul a:hover,
-        .bnavbar-mobile .dropdown ul .active:hover,
-        .bnavbar-mobile .dropdown ul li:hover>a {
-            color: #3B3B3B;
-        }
+    .bnavbar-mobile .dropdown ul a:hover,
+    .bnavbar-mobile .dropdown ul .active:hover,
+    .bnavbar-mobile .dropdown ul li:hover>a {
+      color: #3B3B3B;
+    }
 
-        .bnavbar-mobile .dropdown>.dropdown-active {
-            display: block;
-            margin-left: 0px !important;
-        }
+    .bnavbar-mobile .dropdown>.dropdown-active {
+      display: block;
+      margin-left: 0px !important;
+    }
 
-        .fixed-top {
-            color: #1e1e1e;
-        }
+    .fixed-top {
+      color: #1e1e1e;
+    }
 
 
 
-        /*--------------------------------------------------------------
+    /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-        #header {
-            transition: all 0.5s;
-            z-index: 997;
-            background-color: black;
-            padding: 20px 0;
-        }
-
-        #header .logo {
-            font-size: 28px;
-            margin: 0;
-            padding: 0;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        #header .logo a {
-            color: #fff;
-        }
-
-        #header .logo img {
-            max-height: 40px;
-        }
-
-        #header.header-scrolled {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 12px 0;
-        }
-
-        p {
-            text-align: justify;
-        }
-
-        h6 {
-            text-align: center;
-        }
-    </style>
-
-    <style>
-        html {
-            height: 100%;
-        }
-
-        body {
-            overflow: hidden;
-            background: #bcdee7 url("../img/bg.jpg") no-repeat center center fixed;
-            background-size: cover;
-            position: fixed;
-            padding: 0px;
-            margin: 0px;
-            width: 100%;
-            height: 100%;
-            font: normal 14px/1.618em "Roboto", sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body:before {
-            content: "";
-            height: 0px;
-            padding: 0px;
-            border: 130em solid #313440;
-            position: absolute;
-            left: 50%;
-            top: 100%;
-            z-index: 2;
-            display: block;
-            -webkit-border-radius: 50%;
-            border-radius: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            -webkit-animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
-            animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
-        }
-
-        h1,
-        h2 {
-            font-weight: 500;
-            margin: 0px 0px 5px 0px;
-        }
-
-        h1 {
-            font-size: 24px;
-        }
-
-        h2 {
-            font-size: 16px;
-        }
-
-        p {
-            margin: 0px;
-        }
-
-        .profile-card {
-            background: #FFB300;
-            width: 56px;
-            height: 56px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            z-index: 2;
-            overflow: hidden;
-            opacity: 0;
-            margin-top: 70px;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            -webkit-border-radius: 50%;
-            border-radius: 50%;
-            -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
-            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
-            -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-            animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-        }
-
-        .profile-card header {
-            width: 179px;
-            height: 280px;
-            padding: 40px 20px 30px 20px;
-            display: inline-block;
-            float: left;
-            border-right: 2px dashed #EEEEEE;
-            background: #FFFFFF;
-            color: #000000;
-            margin-top: 50px;
-            opacity: 0;
-            text-align: center;
-            -webkit-animation: moveIn 1s 3.1s ease forwards;
-            animation: moveIn 1s 3.1s ease forwards;
-        }
-
-        .profile-card header h1 {
-            color: #FF5722;
-        }
-
-        .profile-card header a {
-            display: inline-block;
-            text-align: center;
-            position: relative;
-            margin: 25px 30px;
-        }
-
-        .profile-card header a:after {
-            position: absolute;
-            content: "";
-            bottom: 3px;
-            right: 3px;
-            width: 20px;
-            height: 20px;
-            border: 4px solid #FFFFFF;
-            -webkit-transform: scale(0);
-            transform: scale(0);
-            background: -webkit-linear-gradient(top, #2196F3 0%, #2196F3 50%, #FFC107 50%, #FFC107 100%);
-            background: linear-gradient(#2196F3 0%, #2196F3 50%, #FFC107 50%, #FFC107 100%);
-            -webkit-border-radius: 50%;
-            border-radius: 50%;
-            -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-            -webkit-animation: scaleIn 0.3s 3.5s ease forwards;
-            animation: scaleIn 0.3s 3.5s ease forwards;
-        }
-
-        .profile-card header a>img {
-            width: 120px;
-            max-width: 100%;
-            -webkit-border-radius: 50%;
-            border-radius: 50%;
-            -webkit-transition: -webkit-box-shadow 0.3s ease;
-            transition: box-shadow 0.3s ease;
-            -webkit-box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
-            box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
-        }
-
-        .profile-card header a:hover>img {
-            -webkit-box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .profile-card .profile-bio {
-            width: 175px;
-            height: 180px;
-            display: inline-block;
-            float: right;
-            padding: 50px 20px 30px 20px;
-            background: #FFFFFF;
-            color: #333333;
-            margin-top: 50px;
-            text-align: center;
-            opacity: 0;
-            -webkit-animation: moveIn 1s 3.1s ease forwards;
-            animation: moveIn 1s 3.1s ease forwards;
-        }
-
-        .profile-social-links {
-            width: 218px;
-            display: inline-block;
-            float: right;
-            margin: 0px;
-            padding: 15px 20px;
-            background: #FFFFFF;
-            margin-top: 50px;
-            text-align: center;
-            opacity: 0;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            -webkit-animation: moveIn 1s 3.1s ease forwards;
-            animation: moveIn 1s 3.1s ease forwards;
-        }
-
-        .profile-social-links li {
-            list-style: none;
-            margin: -5px 0px 0px 0px;
-            padding: 0px;
-            float: left;
-            width: 25%;
-            text-align: center;
-        }
-
-        .profile-social-links li a {
-            display: inline-block;
-            color: red;
-            width: 24px;
-            height: 24px;
-            padding: 6px;
-            position: relative;
-            overflow: hidden !important;
-            -webkit-border-radius: 50%;
-            border-radius: 50%;
-        }
-
-        .profile-social-links li a i {
-            position: relative;
-            z-index: 1;
-        }
-
-        .profile-social-links li a img,
-        .profile-social-links li a svg {
-            width: 24px;
-        }
-
-        @-webkit-keyframes init {
-            0% {
-                width: 0px;
-                height: 0px;
-            }
-
-            100% {
-                width: 56px;
-                height: 56px;
-                margin-top: 0px;
-                opacity: 1;
-            }
-        }
-
-        @keyframes init {
-            0% {
-                width: 0px;
-                height: 0px;
-            }
-
-            100% {
-                width: 56px;
-                height: 56px;
-                margin-top: 0px;
-                opacity: 1;
-            }
-        }
-
-        @-webkit-keyframes puff {
-            0% {
-                top: 100%;
-                height: 0px;
-                padding: 0px;
-            }
-
-            100% {
-                top: 50%;
-                height: 100%;
-                padding: 0px 100%;
-            }
-        }
-
-        @keyframes puff {
-            0% {
-                top: 100%;
-                height: 0px;
-                padding: 0px;
-            }
-
-            100% {
-                top: 50%;
-                height: 100%;
-                padding: 0px 100%;
-            }
-        }
-
-        @-webkit-keyframes borderRadius {
-            0% {
-                -webkit-border-radius: 50%;
-            }
-
-            100% {
-                -webkit-border-radius: 0px;
-            }
-        }
-
-        @keyframes borderRadius {
-            0% {
-                -webkit-border-radius: 50%;
-            }
-
-            100% {
-                border-radius: 0px;
-            }
-        }
-
-        @-webkit-keyframes moveDown {
-            0% {
-                top: 50%;
-            }
-
-            50% {
-                top: 40%;
-            }
-
-            100% {
-                top: 100%;
-            }
-        }
-
-        @keyframes moveDown {
-            0% {
-                top: 50%;
-            }
-
-            50% {
-                top: 40%;
-            }
-
-            100% {
-                top: 100%;
-            }
-        }
-
-        @-webkit-keyframes moveUp {
-            0% {
-                background: #FFB300;
-                top: 100%;
-            }
-
-            50% {
-                top: 40%;
-            }
-
-            100% {
-                top: 50%;
-                background: #E0E0E0;
-            }
-        }
-
-        @keyframes moveUp {
-            0% {
-                background: #FFB300;
-                top: 100%;
-            }
-
-            50% {
-                top: 40%;
-            }
-
-            100% {
-                top: 50%;
-                background: #E0E0E0;
-            }
-        }
-
-        @-webkit-keyframes materia {
-            0% {
-                background: #E0E0E0;
-            }
-
-            50% {
-                -webkit-border-radius: 4px;
-            }
-
-            100% {
-                width: 440px;
-                height: 280px;
-                background: #FFFFFF;
-                -webkit-border-radius: 4px;
-            }
-        }
-
-        @keyframes materia {
-            0% {
-                background: #E0E0E0;
-            }
-
-            50% {
-                border-radius: 4px;
-            }
-
-            100% {
-                width: 440px;
-                height: 280px;
-                background: #FFFFFF;
-                border-radius: 4px;
-            }
-        }
-
-        @-webkit-keyframes moveIn {
-            0% {
-                margin-top: 50px;
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-                margin-top: -20px;
-            }
-        }
-
-        @keyframes moveIn {
-            0% {
-                margin-top: 50px;
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-                margin-top: -20px;
-            }
-        }
-
-        @-webkit-keyframes scaleIn {
-            0% {
-                -webkit-transform: scale(0);
-            }
-
-            100% {
-                -webkit-transform: scale(1);
-            }
-        }
-
-        @keyframes scaleIn {
-            0% {
-                transform: scale(0);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @-webkit-keyframes ripple {
-            0% {
-                transform: scale3d(0, 0, 0);
-            }
-
-            50%,
-            100% {
-                -webkit-transform: scale3d(1, 1, 1);
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        @keyframes ripple {
-            0% {
-                transform: scale3d(0, 0, 0);
-            }
-
-            50%,
-            100% {
-                transform: scale3d(1, 1, 1);
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        @media screen and (min-aspect-ratio: 4/3) {
-            body {
-                background-size: cover;
-            }
-
-            body:before {
-                width: 0px;
-            }
-
-
-
-            @keyframes puff {
-                0% {
-                    top: 100%;
-                    width: 0px;
-                    padding-bottom: 0px;
-                }
-
-                100% {
-                    top: 50%;
-                    width: 100%;
-                    padding-bottom: 100%;
-                }
-            }
-        }
-
-        @media screen and (min-height: 480px) {
-            .profile-card header {
-                width: auto;
-                height: auto;
-                padding: 30px 20px;
-                display: block;
-                float: none;
-                border-right: none;
-            }
-
-            .profile-card .profile-bio {
-                width: auto;
-                height: auto;
-                padding: 15px 20px 30px 20px;
-                display: block;
-                float: none;
-            }
-
-            .profile-social-links {
-                width: 100%;
-                display: block;
-                float: none;
-            }
-
-
-        }
-
-        @keyframes materia {
-            0% {
-                background: #E0E0E0;
-            }
-
-            50% {
-                border-radius: 4px;
-            }
-
-            100% {
-                width: 280px;
-                height: 440px;
-                background: #FFFFFF;
-                border-radius: 4px;
-            }
-        }
-    </style>
+    #header {
+      transition: all 0.5s;
+      z-index: 997;
+      background-color: black;
+      padding: 20px 0;
+    }
+
+    #header .logo {
+      font-size: 28px;
+      margin: 0;
+      padding: 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    #header .logo a {
+      color: #fff;
+    }
+
+    #header .logo img {
+      max-height: 40px;
+    }
+
+    #header.header-scrolled {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 12px 0;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    h6 {
+      text-align: center;
+    }
+  </style>
 
 
 </head>
 
 <body>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top ">
-        <div class="container d-flex align-items-center justify-content-between">
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
 
-            <i iclass=" bi bi-list mobile-nav-toggle"></i>
+      <i iclass=" bi bi-list mobile-nav-toggle"></i>
 
 
-            <h1 class="logo"><a href="index.html">Krishnaranjani</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-            <nav id="bnavbar" class="bnavbar">
+      <h1 class="logo"><a href="index.html">Krishnaranjani</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <nav id="bnavbar" class="bnavbar">
+        <ul>
+          <li><a class="bnav-link scrollto  " href="index.html">Home</a></li>
+          <li><a class="bnav-link scrollto " href="mainresearch.html">Research</a></li>
+          <li><a class="bnav-link scrollto active" href="Blog.html">Portfolio</a></li>
+          <li><a class="bnav-link scrollto" href="Resume.html">Resume</a></li>
+          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="Experience.html">Bio</a></li>
+              <li><a href="research.html">Current Research</a></li>
+              <li><a href="Feedback.html">Testimonials</a></li>
+              <li><a href="read.html">Reads</a></li>
+            </ul>
+          </li>
+          <li><a class="bnav-link scrollto" href="contact.html">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <main id="main">
+
+    <!-- ======= Blog Single Section ======= -->
+    <section class="blog-wrapper sect-pt4" id="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-box">
+              <div class="post-thumb">
+                <img src="assets/img/post-1.jpg" class="img-fluid" alt="Robotic Vechicle">
+              </div>
+              <div class="post-meta">
+                <h1 class="article-title">Environmental Analysis Vechicle</h1>
                 <ul>
-                    <li><a class="bnav-link scrollto  " href="index.html">Home</a></li>
-                    <li><a class="bnav-link scrollto " href="mainresearch.html">Research</a></li>
-                    <li><a class="bnav-link scrollto active" href="Blog.html">Portfolio</a></li>
-                    <li><a class="bnav-link scrollto" href="Resume.html">Resume</a></li>
-                    <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
-                      <ul>
-                        <li><a href="Experience.html">Bio</a></li>
-                        <li><a href="research.html">Current Research</a></li>
-                        <li><a href="Feedback.html">Testimonials</a></li>
-                        <li><a href="read.html">Reads</a></li>
-                      </ul>
-                    </li>
-                    <li><a class="bnav-link scrollto" href="contact.html">Contact</a></li>
-                  </ul>
-            </nav><!-- .navbar -->
+                  <li>
+                    <span class="bi bi-person"></span>
+                    <a href="#">Krishnaranjani</a>
+                  </li>
+                  <li>
+                    <span class="bi bi-tag"></span>
+                    <a href="#">Internet Of Things</a>
+                  </li>
 
-        </div>
-    </header><!-- End Header -->
-
-    <main id="main">
-        <aside class="profile-card">
-            <header>
-                <!-- here’s the avatar -->
-                <a target="_blank" href="#">
-                    <img src="http://lorempixel.com/150/150/people/" class="hoverZoomLink">
-                </a>
-
-                <!-- the username -->
-                <h1>
-                    John Doe
-                </h1>
-
-                <!-- and role or location -->
-                <h2>
-                    Better Visuals
-                </h2>
-
-            </header>
-
-            <!-- bit of a bio; who are you? -->
-            <div class="profile-bio">
+                </ul>
+              </div>
+              <div class="article-content ">
+                <p>
+                  &nbsp; &nbsp; &nbsp; &nbsp; Environmental monitoring is indeed a review of the processes and
+                  activities required to track the environmental baseline. IoT sensors are able to offer correct
+                  real-time information on the surrounding to assist us to understand how we tend to have an effect on
+                  the environment and take actions to enhance quality of life. We proposed an automated vehicle that
+                  used for monitoring temperature, humidity, pressure, light luminescence and concentration of gases.
+                  Visualization of environment can be obtained by camera through IoT gateway. The proposed robotic
+                  vehicle is controlled by an individual via android application. Latitude and longitude coordinates are
+                  obtained by Global Position System mounted on the robotic vehicle. The robotic system is accomplished
+                  using a cost-efficient Arduino that communicates through a wireless network to the Internet of things
+                  platform, where data are stored, processed and can be accessed using a smart device. The system can
+                  update the data to the application for every 8 seconds. Data stored can be used to further explore
+                  pollution reduction, energy savings and improve the overall living environment. It focuses primarily
+                  on Internet connected monitoring system that streams live camera imagery and other environmental
+                  information through Internet of things. The system can be linked with satellite for effective
+                  communication.
+                </p>
+                <img src="assets/img/Blog/blog1-1.PNG" class="img-fluid" alt="">
+                <h6>Figure 1 Block Diagram</h6>
+                <p></p>
 
                 <p>
-                    It takes monumental improvement for us to change how we live our lives. Design is the way we access
-                    that improvement.
+                  &nbsp; &nbsp; &nbsp; &nbsp;The methodological development of this research was based on IoT System.
+                  This paper aims to apply IoT
+                  techniques, embedded system and electronic sensors in the design and implementation of a low-cost
+                  robotics to
+                  monitoring the condition in the environment. The robotic system is constructed by using mechanical and
+                  electrical components. It is of the wheeled type for autonomous movement. Our proposed system is
+                  wireless and therefore the increasing internet technology like Wi-Fi, cloud network, wireless system
+                  are
+                  often used from everywhere and anytime. The controlling vehicles for the environment monitoring in
+                  system is an Arduino. The data send using mobile app is received by IoT module connected to Arduino.
+                  Then, it reads the data and decides the output of electrical devices connected to it through
+                  Internet.The
+                  system can update data to IoT server for every 8 seconds. LM35, MQ-2, Humidity Sensor, digital air
+                  pressure sensor, LDR and Radiation sensor are the sensors used for environment monitoring. HC-05 is
+                  the
+                  Bluetooth module used in the robotic system. It can be used for both master and slave configuration.
+                  Blynk
+                  is an open source android application acts as an interface between the smart phone and hardware which
+                  is
+                  accountable for the communication. Systems can also use Blynk cloud or compile our private Blynk
+                  server. A
+                  power supply of 5V is given to the electronic circuit from the Battery. Camera is connected to the
+                  circuit
+                  in order to obtain the environmental visualization. The robotic vehicle navigation is monitored by GPS
+                  module.
+                </p>
+                <img src="assets/img/Blog/blog1-2.PNG" class="img-fluid" alt="">
+                <h6>Figure 2 Flow Chart of Navigation System</h6>
+                <p></p>
+
+
+                <p>
+                  &nbsp; &nbsp; &nbsp; &nbsp; The robotic system is designed in a way to provide autonomous movement.
+                  The autonomous movement can be
+                  controlled by the mobile application. The intuitive user interfaces within the App and Autonomous
+                  movement
+                  after getting instruction from the user. Environmental visualization is transmitted to android
+                  application through
+                  IoT gateway which is obtained by the camera mounted on the robotic vehicle. Robotic system monitors
+                  environmental parameters like temperature, humidity, air quality, air pressure, light intensity and
+                  radiation. Latitude and longitude coordinates are obtained by Global Position System mounted on the
+                  robotic
+                  vehicle. The robotic system is accomplished using a cost-efficient Arduino that communicates through a
+                  wireless network to the Internet of things platform, where data are stored, processed and can be
+                  accessed using a
+                  smart device. The proposed system updates the data to IoT platform for every 8 second. Data are
+                  collected and
+                  transmitted to phone through IoT. The stored data will be used for further analysis of the reduction
+                  of
+                  pollution, save energy and provide an overall living environment enhancement.
+
                 </p>
 
+                <img src="assets/img/Blog/blog1-3.PNG" class="img-fluid" alt="">
+                <h6>Figure 3 Flow Chart for Environment Sensing</h6>
+                <p></p>
+
+                <p>
+                  &nbsp; &nbsp; &nbsp; &nbsp; GPS controlled robotic vehicle for monitoring the environmental conditions
+                  such as
+                  temperature, humidity, air quality, air pressure, light intensity, and radiation. Sensors sense the
+                  data from the environment and transmit it to the cloud server using wireless communication. Then the
+                  data are
+                  updated to android application for every eight seconds. The key benefits of the system are the user
+                  interfaces
+                  within the App and Autonomous movement after obtaining instruction from the user. The proposed robotic
+                  vehicle
+                  work effectively in remote places to collect data and it is easy to implement. The environmental
+                  visualization can be monitored in android application which is obtained through the camera in the
+                  system. Data obtained
+                  through the internet of things platform can be used for future prediction
+                </p>
+                <blockquote class="blockquote">
+                  <p class="mb-0">Progress is impossible without change, and those who cannot change their minds cannot
+                    change anything.</p>
+                  </p>
+                </blockquote>
+
+                <h4>For more Information and Design visit my <a
+                    href="https://github.com/KrishnaRanjani/Robotic-Vehicle-for-Impact-Analysis"
+                    class="stretched-link">GitHub</a></h4>
+
+              </div>
             </div>
 
-            <!-- some social links to show off -->
-            <ul class="profile-social-links">
-                <li>
-                    <a target="_blank" href="https://www.facebook.com/creativedonut">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://twitter.com/dropyourbass">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://github.com/vipulsaxena">
-                        <i class="fa fa-github"></i>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://www.behance.net/vipulsaxena">
+          </div>
+          <div class="col-md-4">
+            <div class="widget-sidebar sidebar-search">
+              <h5 class="sidebar-title">Life isn't about finding yourself. Life is about creating yourself.</h5>
+              <div class="sidebar-content">
 
-                        <i class="fa fa-behance"></i>
-                    </a>
-                </li>
-            </ul>
-        </aside>
+              </div>
+            </div>
+            <div class="widget-sidebar">
+              <h5 class="sidebar-title">Recent Post</h5>
+              <div class="sidebar-content">
+                <ul class="list-sidebar">
+                  <li>
+                    <a href="#">Medicine Tracking System</a>
+                  </li>
+                  <li>
+                    <a href="#">Defence on cybercrime</a>
+                  </li>
+                  <li>
+                    <a href="#">Material Point Method</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
+            <div class="widget-sidebar widget-tags">
+              <h5 class="sidebar-title">Tags</h5>
+              <div class="sidebar-content">
+                <ul>
+                  <li>
+                    <a href="#">Robotics</a>
+                  </li>
+                  <li>
+                    <a href="#">Design.</a>
+                  </li>
+                  <li>
+                    <a href="#">Internet of Things</a>
+                  </li>
+                  <li>
+                    <a href="#">Impact analysis</a>
+                  </li>
+                  <li>
+                    <a href="#">Environment monitoring</a>
+                  </li>
 
-        <!-- ======= Footer ======= -->
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="copyright-box">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Blog Single Section -->
 
-                        </div>
-                    </div>
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                Blog
+              </h3>
+              <h4 class="subtitle-a">
+                The future belongs to those who believe in the beauty of their dreams
+              </h4>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <a href="blog-single.html"><img src="assets/img/post-1.jpg" alt="" class="img-fluid"></a>
+              </div>
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category">Robotics</h6>
+                  </div>
                 </div>
+                <h3 class="card-title"><a href="blog-single.html">Environmental Analysis Vechicle</a></h3>
+                <p class="card-description">
+                  Environmental monitoring is indeed a review of the processes and activities
+                  required to track the environmental baseline.
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="post-author">
+                  <a href="#">
+                    <img src="assets/img/profilepic.jpg" alt="" class="avatar rounded-circle">
+                    <span class="author">Krishnaranjani</span>
+                  </a>
+                </div>
+                <div class="post-date">
+                  <span class="bi bi-clock"></span> 5 min
+                </div>
+              </div>
             </div>
-        </footer>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <a href="blog-single.html"><img src="assets/img/post-2.jpg" alt="" class="img-fluid"></a>
+              </div>
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category">IoT</h6>
+                  </div>
+                </div>
+                <h3 class="card-title"><a href="blog-single.html">Medicine Tracking System</a></h3>
+                <p class="card-description">
+                  Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
+                  a pellentesque nec,
+                  egestas non nisi.
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="post-author">
+                  <a href="#">
+                    <img src="assets/img/profilepic.jpg" alt="" class="avatar rounded-circle">
+                    <span class="author">Krishnaranjani</span>
+                  </a>
+                </div>
+                <div class="post-date">
+                  <span class="bi bi-clock"></span> 5 min
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <a href="blog-single.html"><img src="assets/img/post-3.jpg" alt="" class="img-fluid"></a>
+              </div>
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category">Machine Learning</h6>
+                  </div>
+                </div>
+                <h3 class="card-title"><a href="blog-single.html">Defence on cybercrime</a></h3>
+                <p class="card-description">
+                  As the world is increasingly interconnected, everyone shares the responsibility of securing
+                  cyberspace.
 
-        <div id="preloader"></div>
-        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-                class="bi bi-arrow-up-short"></i></a>
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="post-author">
+                  <a href="#">
+                    <img src="assets/img/profilepic.jpg" alt="" class="avatar rounded-circle">
+                    <span class="author">Krishnaranjani</span>
+                  </a>
+                </div>
+                <div class="post-date">
+                  <span class="bi bi-clock"></span> 5 min
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Blog Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route"
+      style="background-image: url(assets/img/overlay-bg.jpg)">
+      <div class="overlay-mf"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="contact-mf">
+              <div id="contact" class="box-shadow-full">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        Send Message
+                      </h5>
+                    </div>
+                    <div>
+                      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                required>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                                required>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                                required>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                                required></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-12 text-center my-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                          </div>
+                          <div class="col-md-12 text-center">
+                            <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="title-box-2 pt-4 pt-md-0">
+                      <h5 class="title-left">
+                        Get in Touch
+                      </h5>
+                    </div>
+                    <div class="more-info">
+                      <p class="lead">
+                        My Life Motto: "Constraints Drive Creativity"
+                      </p>
+                      <ul class="list-ico">
+                        <li><span class="bi bi-geo-alt"></span> Erode, Tamil Nadu, India</li>
+                        <li><span class="bi bi-envelope"></span> rkrishnaranjani12@gmail.com</li>
+                      </ul>
+                    </div>
+                    <div class="socials">
+                      <ul>
+                        <li><a href="https://github.com/KrishnaRanjani"><span class="ico-circle"><i
+                                class="bi bi-github align-middle"></i></span></a></li>
+                        <li><a href="https://twitter.com/Krishnaranjani_"><span class="ico-circle"><i
+                                class="bi bi-twitter align-middle"></i></span></a></li>
+                        <li><a href="https://www.linkedin.com/in/krishnaranjani/"><span class="ico-circle"><i
+                                class="bi bi-linkedin align-middle"></i></span></a></li>
+                        <li><a href="https://www.instagram.com/aim_2_spark/"><span class="ico-circle"><i
+                                class="bi bi-instagram align-middle"></i></span></a></li>
+                        <li><a href="mailto: rkrishnaranjani12gmail.com"><span class="ico-circle"><i
+                                class="bi bi-mailbox2 align-middle"></i></span></a></li>
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
 
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="assets/vendor/php-email-form/validate.js"></script>
-        <script src="assets/vendor/purecounter/purecounter.js"></script>
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-        <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
 
 
-        <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 

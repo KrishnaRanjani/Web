@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Krishnaranjani</title>
+
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        /*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+
+        .bnavbar {
+            padding: 0;
+            background-color: 1e1e1e;
+        }
+
+        .bnavbar ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .bnavbar li {
+            position: relative;
+        }
+
+        .bnavbar>ul>li {
+            white-space: nowrap;
+            padding: 10px 0 10px 30px;
+        }
+
+        .bnavbar a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 0;
+            white-space: nowrap;
+            transition: 0.3s;
+            letter-spacing: 0.4px;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .bnavbar a i,
+        .bnavbar a:focus i {
+
+            font-size: 12px;
+            line-height: 0;
+            margin-left: 5px;
+        }
+
+        .bnavbar>ul>li>a:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            background-color: #fff;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out 0s;
+        }
+
+        .bnavbar a:hover:before,
+        .bnavbar li:hover>a:before,
+        .bnavbar .active:before {
+            visibility: visible;
+            width: 80%;
+        }
+
+        .bnavbar a:hover,
+        .bnavbar .active,
+        .bnavbar .active:focus,
+        .bnavbar li:hover>a {
+            color: #fff;
+        }
+
+        .bnavbar .dropdown ul {
+            display: block;
+            position: absolute;
+            left: 30px;
+            top: calc(100% + 30px);
+            margin: 0;
+            padding: 10px 0;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            background: #fff;
+            box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+            transition: 0.3s;
+        }
+
+        .bnavbar .dropdown ul li {
+            min-width: 200px;
+        }
+
+        .bnavbar .dropdown ul a {
+            padding: 10px 20px;
+            font-size: 14px;
+            text-transform: none;
+            color: #4e4e4e;
+        }
+
+        .bnavbar .dropdown ul a i {
+            font-size: 12px;
+        }
+
+        .bnavbar .dropdown ul a:hover,
+        .bnavbar .dropdown ul .active:hover,
+        .bnavbar .dropdown ul li:hover>a {
+            color: #3B3B3B;
+        }
+
+        .bnavbar .dropdown:hover>ul {
+            opacity: 1;
+            top: 100%;
+            visibility: visible;
+        }
+
+        .bnavbar .dropdown .dropdown ul {
+            top: 0;
+            left: calc(100% - 30px);
+            visibility: hidden;
+        }
+
+        .bnavbar .dropdown .dropdown:hover>ul {
+            opacity: 1;
+            top: 0;
+            left: 100%;
+            visibility: visible;
+        }
+
+        @media (max-width: 1366px) {
+            .bnavbar .dropdown .dropdown ul {
+                left: -90%;
+            }
+
+            .bnavbar .dropdown .dropdown:hover>ul {
+                left: -100%;
+            }
+        }
+
+        /**
+* Mobile Navigation 
+*/
+        .mobile-nav-toggle {
+            color: #fff;
+            font-size: 28px;
+            cursor: pointer;
+            display: none;
+            line-height: 0;
+            transition: 0.5s;
+        }
+
+
+        @media (max-width: 991px) {
+            .mobile-nav-toggle {
+                display: block;
+                z-index: 1000;
+            }
+
+            .bnavbar ul {
+                display: none;
+            }
+        }
+
+        .bnavbar-mobile {
+            position: fixed;
+            overflow: hidden;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: rgba(78, 78, 78, 0.9);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        .bnavbar-mobile .mobile-nav-toggle {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .bnavbar-mobile ul {
+            display: block;
+            position: absolute;
+            width: 100%;
+            top: 55px;
+            /* right: 15px;
+  bottom: 15px;
+  left: 15px; */
+            padding: 10px 0;
+            background-color: rgb(251 251 251);
+            overflow-y: auto;
+            transition: 0.3s;
+        }
+
+        .bnavbar-mobile>ul>li {
+            padding: 0;
+        }
+
+        .bnavbar-mobile a:hover:before,
+        .bnavbar-mobile li:hover>a:before,
+        .bnavbar-mobile .active:before {
+            visibility: hidden;
+        }
+
+        .bnavbar-mobile a {
+            padding: 10px 20px;
+            font-size: 15px;
+            color: #4e4e4e;
+        }
+
+        .bnavbar-mobile a:hover,
+        .bnavbar-mobile .active,
+        .bnavbar-mobile li:hover>a {
+            color: #3B3B3B;
+        }
+
+        .bnavbar-mobile .getstarted {
+            margin: 15px;
+        }
+
+        .bnavbar-mobile .dropdown ul {
+            position: static;
+            display: none;
+            margin: 10px 20px;
+            padding: 10px 0;
+            z-index: 99;
+            opacity: 1;
+            visibility: visible;
+            background: #f9fafb;
+            box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+        }
+
+        .bnavbar-mobile .dropdown ul li {
+            min-width: 200px;
+        }
+
+        .bnavbar-mobile .dropdown ul a {
+            padding: 10px 20px;
+        }
+
+        .bnavbar-mobile .dropdown ul a i {
+            font-size: 12px;
+        }
+
+        .bnavbar-mobile .dropdown ul a:hover,
+        .bnavbar-mobile .dropdown ul .active:hover,
+        .bnavbar-mobile .dropdown ul li:hover>a {
+            color: #3B3B3B;
+        }
+
+        .bnavbar-mobile .dropdown>.dropdown-active {
+            display: block;
+            margin-left: 0px !important;
+        }
+
+        .fixed-top {
+            color: #1e1e1e;
+        }
+
+
+
+        /*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+        #header {
+            transition: all 0.5s;
+            z-index: 997;
+            background-color: black;
+            padding: 20px 0;
+        }
+
+        #header .logo {
+            font-size: 28px;
+            margin: 0;
+            padding: 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        #header .logo a {
+            color: #fff;
+        }
+
+        #header .logo img {
+            max-height: 40px;
+        }
+
+        #header.header-scrolled {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 12px 0;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        h6 {
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <i iclass=" bi bi-list mobile-nav-toggle"></i>
+
+
+            <h1 class="logo"><a href="index.html">Krishnaranjani</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="bnavbar" class="bnavbar">
+                <ul>
+                    <li><a class="bnav-link scrollto  " href="index.html">Home</a></li>
+                    <li><a class="bnav-link scrollto " href="mainresearch.html">Research</a></li>
+                    <li><a class="bnav-link scrollto active" href="Blog.html">Portfolio</a></li>
+                    <li><a class="bnav-link scrollto" href="Resume.html">Resume</a></li>
+                    <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="Experience.html">Bio</a></li>
+                            <li><a href="research.html">Current Research</a></li>
+                            <li><a href="Feedback.html">Testimonials</a></li>
+                            <li><a href="read.html">Reads</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="bnav-link scrollto" href="contact.html">Contact</a></li>
+                </ul>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+
+    <main id="main">
+
+        <!-- ======= Blog Single Section ======= -->
+        <section class="blog-wrapper sect-pt4" id="blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="post-box">
+                            <div class="post-thumb">
+                                <img src="assets/img/Blog/Blog3-cover.jpg" class="img-fluid" alt="Robotic Vechicle">
+                            </div>
+                            <div class="post-meta">
+                                <h1 class="article-title">Defence on Cyber Crimes Against Women and Laws in India</h1>
+                                <ul>
+                                    <li>
+                                        <span class="bi bi-person"></span>
+                                        <a href="#">Krishnaranjani</a>
+                                    </li>
+                                    <li>
+                                        <span class="bi bi-tag"></span>
+                                        <a href="#">Analysis</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="article-content ">
+                                <p>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; Though crime against women is on a rise in all fields
+                                    being a casualty of cyber crime might be most traumatic involvement for a woman.
+                                    Particularly in India where the society looks down upon the woman, and the law
+                                    doesn’t indeed legitimately perceive cyber crimes. Time is presently here to acquit
+                                    that our women are secure in cyber world; the memento alarms to halt clowning around
+                                    activities on web get to because it is an offense and women take umbrage from it.
+                                    Each moment, one woman in India gets deceived to be a casualty of and the online
+                                    platform cyber violations and a cyber crime is presently the modern stage where a
+                                    security, woman’s dignity and security is progressively being challenged each
+                                    minute. Offense, undermining, Trolling, stalking, voyeurism, body-shaming,
+                                    slandering, watchfulness, exact retribution porn and numerous other shapes of
+                                    obscene representation of women are uncontrolled within the cyber world. In this
+                                    paper we organize to examine upon the diverse sorts of cyber crimes that can be
+                                    caused upon a woman, and they unfavourably influence her. We shall also briefly
+                                    examine upon the different laws that exist to secure woman in such cases such as the
+                                    Information Technology Act (2000).
+                                </p>
+                                <img src="assets/img/Blog/Blog3-1.jpg" class="img-fluid" alt="">
+
+                                <p></p>
+
+                                <h1 class="article-title">Cyber Crimes Against Women</h1>
+
+                                <p>
+                                    &nbsp; &nbsp; &nbsp; &nbsp;Technical measures to forfend computer systems are being
+                                    implemented along with licit measures to obviate and deter malefactor deportment.
+                                    But this technology kens no physical boundaries; it flows more facilely around the
+                                    world subsequently the malefactors are increasingly located in places other than
+                                    where their acts engender their effects and Cyberspace is no exception to it.
+                                    Cyberspace is an incipient horizon controlled by machine for information and any
+                                    malefactor activity where computer or network is utilized as the source, implement,
+                                    or target is kenned Cybercrime. The mundane types of cybercrime may be discussed
+                                    under the following heads: hacking, cyber stalking, cyber pornography, phishing, web
+                                    jacking, software piracy, and cyber terrorism. Cybercrime against women in India is
+                                    relatively an incipient concept. When India commenced her peregrination in the field
+                                    of Information Technology, the priority was given to the aegis of electronic
+                                    commerce (e-commerce) and communications under Information Technology Act, 2000
+                                    whereas cyber socializing communications has remained untouched. The Act turned out
+                                    to be a moiety baked law as the operating area of the law stretched Cyber
+                                    Victimization of Women and Cyber Laws in India. The present study is an endeavour to
+                                    highlight the cyber malefactions against women in India.
+
+
+                                </p>
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp; Women aren't ready to report cybercrimes straightaway as
+                                    they're not
+                                    extremely aware on wherever to report such crimes or aren't serious regarding
+                                    coverage an equivalent thanks to social embarrassment they don’t wish to face.Their
+                                    mindset needs to broaden and they must be the whip to curb down by taking derring-do
+                                    against such perpetrators that is to go ahead and lodge an immediate complaint. Most
+                                    of the issues will be resolved if women report the crime right away and warn the
+                                    wrongdoer concerning taking robust action.</p>
+
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp; Cybercrimes intent typically through fake ids created on
+                                    Facebook, Twitter and different social media platforms inflicting grave injury to
+                                    women, as through these platforms, major blackmailing, threatening, bullying, or
+                                    cheating via person messages and email unit of measurement done by perpetrators.
+                                    Ill-intentioned men act these cyber-crimes with malafide intention like smuggled
+                                    gain, revenge, insult to the modesty of a woman, extortion, blackmailing, sexual
+                                    exploitation, defamation, incite hate against the community, and prank satisfaction
+                                    of acquiring and to steal data</p>
+
+                                <h1 class="article-title">Major Cyber Crime Areas
+                                </h1>
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp; Some of the most important well-known cybercrimes have
+                                    place thousands of girls into
+                                    varied health problems like depression, cardiovascular disease and women suffer from
+                                    anxiety, cardiomyopathy, diabetic and thyroid ailments because of e-harassment.
+                                    Major
+                                    cyber crimes area unit as under,</p>
+
+
+                                <ul>
+                                    <li>Cyber stalking</li>
+                                    <li>Defamation</li>
+                                    <li>Morphing</li>
+                                    <li>Cyber Pornography</li>
+                                    <li>E-mail spoofing</li>
+                                    <li>Trolling</li>
+
+                                </ul>
+
+                                <h1 class="article-title">Cyber Law under the Information and Technology Act, 2000</h1>
+
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp; The stalkers and cybercriminals can be booked under
+                                    several sections for breaching
+                                    of privacy. Section 67 deals with publishing or transmitting obscene material in
+                                    electronic form. The earlier section in ITA was later widened as per ITAA 2008 in
+                                    which child pornography and retention of records by intermediaries were all
+                                    included.</p>
+
+                                <p>
+
+                                <h5>a) Section 66A</h5>
+
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp; Sending offensive messages through communication service,
+                                    inflicting annoyance etc.,
+                                    through associate transmission or causing associate email to mislead or deceive the
+                                    recipient regarding the origin of such messages normally referred to as IP or email
+                                    spoofing area unit all coated here. Punishment for these acts is imprisonment up to
+                                    three years or fine.</p>
+
+                                <h5> b) Section 66B</h5>
+
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp; Dishonestly receiving taken computer resource or
+                                    communication device with social
+                                    control up to a few years or one large integer rupees as fine or each.</p>
+
+                                <h5> c) Section 66D</h5>
+
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;Cheating by person on victimization computer resource or a
+                                    communication device
+                                    shall be
+                                    reprimanded with imprisonment of either description for a term that extends to 3
+                                    years
+                                    and shall even be at risk of fine which can touch one 100000 rupees.</p>
+
+                                <h5> d) Section 66E</h5>
+
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp;Privacy violation-Publishing or transmittal non-public
+                                    space
+                                    of somebody while not
+                                    his
+                                    or her consent etc. penalisation is 3 years imprisonment or 2 hundred thousand
+                                    rupees
+                                    fine or each. </p>
+                                <h5> e) Section 66F</h5>
+
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;Cyber terrorism – intent to threaten the unity, integrity,
+                                    security or sovereignty
+                                    of
+                                    the state and denying access to anyone licensed to get access to personal resource
+                                    or
+                                    trying to penetrate or access a computer resource while not authorization.</p>
+
+                                <h5> f) Section 72</h5>
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;Punishment for breaching one’s space and confidentiality.
+                                </p>
+                                <h5> g) Section 72A</h5>
+
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;Punishment for revealing data throughout lawful contract.
+                                </p>
+
+                                <h5> h) Section 441 IPC</h5>
+
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;This section deals with criminal misdemeanour.</p>
+
+                                <h5> i) Section 354D</h5>
+
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;This section deals with stalking. It defines stalker as a
+                                    person who follows women
+                                    and
+                                    tries to contact such woman, monitors each activity undertaken by the girl whereas
+                                    mistreatment digital media.</p>
+
+                                <h1 class="article-title">Major Cyber Crime Areas</h1>
+
+                                <ul>
+                                    <li>Don’t share passwords</li>
+                                    <li> Don’t leave your webcam connected</li>
+                                    <li>Don’t share more than necessary</li>
+                                    <li>Don’t meet on-line acquaintances alone</li>
+                                    <li> Update all operating systems on your devices</li>
+                                    <li>Secure your devices with anti-virus software</li>
+                                    <li>Perused the fine print</li>
+                                    <li>There's no such thing as ‘freebies’</li>
+                                    <li>Block individuals you don’t need to interact with</li>
+
+                                </ul>
+
+                                <h1 class="article-title">Reporting a cyber crime</h1>
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;The strategy for news cyber violations is extra or less a
+                                    proportionate as for news the other very offense. The nearby police stations can be
+                                    approached for recording complaints fair as the cyber crime cells specially assigned
+                                    with the jurisdiction to enlist complaint. In addition, provisions have now been
+                                    made for filing of 'E-FIR' in most of the states. Women security is a must and the
+                                    police in our nation must be well prepared to resolve complaints of cyber crime made
+                                    by women and cognizance of the same must be taken very seriously.</p>
+
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;Each police station must have expert-trained police
+                                    officer who can quickly bargain with cyber crime complaints made. In case a police
+                                    station denies enlist the complaint, a representation may be given to the
+                                    commissioner of police/superintendent of police. If in spite of that action isn't
+                                    taken, the following step seem either be a private complaint before the concerned
+                                    court or a summons before the high court. “If There's Cyber Crime, Women Begin
+                                    Reporting Right Now”</p>
+
+
+                                <img src="assets/img/Blog/Blog3-2.PNG" class="img-fluid" alt="">
+                                <h6> Reasons for Cyber Attacks</h6>
+
+                                <h1 class="article-title">Targets for cyber attackers</h1>
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;There are different frameworks and innovations that are
+                                    being focused on by attackers, using multiple attack measures. There is steady
+                                    development towards targeted attacks, which is expanding the like hood of attacks to
+                                    take place.
+                                </p>
+
+                                <img src="assets/img/Blog/Blog3-3.PNG" class="img-fluid" alt="">
+                                <h6> Targets for Cyber Attackers</h6>
+
+                                <h1 class="article-title">Measures needed to Reduce Cyber Crimes</h1>
+
+                                <ul>
+                                    <li>Drafting of National Cyber Security Policy of India as soon as possible.</li>
+                                    <li> Dedicated cyber security laws in India keeping in mind contemporary cyber
+                                        security threat.</li>
+                                    <li>Cyber security awareness must be improved in order to involve all the
+                                        stakeholders for the implementation of cyber security initiatives of GOI</li>
+                                    <li>Greater emphasis on R&D of indigenous security technology.</li>
+                                    <li> PPP VIA a VIS technical and operational co-operation aimed at encouraging
+                                        organisation to adopt individually tailored IT regulations</li>
+                                    <li>Creation of new agency such as National Critical Information Infrastructure
+                                        Protection Centre to charge with protecting assets in sensitive areas</li>
+                                </ul>
+                                <h1 class="article-title">Most affected</h1>
+
+                                <p>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; A major consequence of online abuse is the silencing
+                                    effect it has on women, sometimes forcing them to shut themselves out of online
+                                    spaces. A survey by Feminism in India, a digital platform, found that 28% of
+                                    women who experienced online abuse said they intentionally reduced their online
+                                    presence. Amnesty International conducted a study on online violence against
+                                    women in 2017 which showed that more than 75% of women surveyed across eight
+                                    countries (Denmark, Italy, New Zealand, Poland, Spain, Sweden, the UK and USA)
+                                    who had experienced abuse or harassment made changes to the way they used social
+                                    media platforms. A third of women said they even stopped posting their opinion
+                                    on certain issues altogethe
+                                </p>
+
+                                <p>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; Women often find it difficult to report online abuse
+                                    to the police for several reasons, ranging from not knowing the law to not
+                                    trusting the criminal justice system. Of the women surveyed by Feminism in India
+                                    who reported harassment to the authorities, only one in ten said they had
+                                    received a helpful response. The National Crime Records Bureau says that around
+                                    12,000 incidents of cyber-crimes were reported in 2016, and nearly the same
+                                    number that were reported the previous year were still pending investigation.
+                                </p>
+
+                                <p>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; Social media platforms, which are uniquely
+                                    positioned to take quick and effective action against abusers, are also known to
+                                    fail to act. Amnesty’s survey indicated that women feel social media companies
+                                    need to do more. Just 18% of women polled across all countries said that the
+                                    responses of social media companies were very, fairly or completely adequate. In
+                                    India, there have been a number of reports in the media about women who reported
+                                    online abuse to social media platforms, but received highly unsatisfactory
+                                    responses
+                                </p>
+
+                                <img src="assets/img/Blog/Blog3-4.PNG" class="img-fluid img-thumbnail " alt="">
+                                <p></p>
+                                <h6>Top Five Attacks Faced</h6>
+                                <p></p>
+
+                                <h1 class="article-title">Cybercrime Tools</h1>
+                                <h3>Analysis Tools </h3>
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp; These tools are utilized to measure hazard. They measure
+                                    what an incident did and how
+                                    it was done and what the results were. Cases of investigation tools include the
+                                    Coroners Toolkit that runs beneath NIX and Encase that runs beneath windows.</p>
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp; These include a specialized awareness through
+                                    information of specialized suggestions of activities, an understanding of how data
+                                    can be modified, cleverness, open-mindedness, deviousness, a tall standard of
+                                    morals, proceeding instruction and the utilize of excess information sources. In
+                                    case one doesn’t altogether get it or meet the over necessities, the framework can
+                                    be left distant more regrettable than when at first compromised from a legal angle.
+                                    It is like a activity cop investigating a murder scene. I would deliver a case of
+                                    one of the told” EcCase”. It gives a recognizable Windows Explorer fashion view. The
+                                    view shows records without changing them in any way, counting free space that
+                                    contains erased records. The see sheet is additionally exceptionally supportive when
+                                    sorting through many records. It contains a solid Report see which offer assistance
+                                    agents construct a case as they continue. It too permits point and tap record
+                                    hashing; a priceless apparatus to verify records afterward.</p>
+
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp; The reason of the ultimate organ of the cyber crimes
+                                    division is to police the web to guarantee that certain cyber crimes can be stopped
+                                    some time recently their commission. For this reason, the Network Monitoring Centre
+                                    has been provided with a Network Monitoring Tool, created by I.I.T. Kanpur. It is
+                                    additionally utilized to permit comparative devices to attain such a purpose.</p>
+
+                                <h1 class="article-title">Machine Learning & Deep Learning based Tools</h1>
+                                <h3>A) SIEM tool</h3>
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp;Machine Learning & Deep Learning based SIEM tool for
+                                    numerous professionals, SOC still implies SIEM tool and security observing and to a
+                                    few degrees that's redress as the SIEM tool acts as a core engine of the SOC, which
+                                    collects the logs from the integrated log sources, forms those logs as per the
+                                    predefined rule and give the alerts</p>
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp;Since the beginning of the SIEM tool security
+                                    engineers/analysts are putting in parts of distinctive rules to screen and relate
+                                    the log information pumped into the SIEM instrument. These rules are included one by
+                                    one as per the environment necessities</p>
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp;Since of the amount of log data that must be prepared by
+                                    the SIEM apparatus, it is impossible to generate the rule that can distinguish the
+                                    anomalies. The next generation SIEM tools will be utilizing machine learning which
+                                    is basically marrying the rules or algorithms with the measurements that can be
+                                    utilized for making knowledge-based, intelligent investigation that will deliver
+                                    prescient noteworthy results</p>
+
+                                <h3>B) Wearing the Hackers Hat — AI primarily based Sandbox</h3>
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp;Hackers are constantly ahead of security defence bunches,
+                                    utilize the innovation to perform investigation of focused on client’s environment
+                                    to spot the vulnerabilities to anticipate exploitability. This same technique
+                                    security analyst will use by utilizing AI and ML-based sandboxing tool, which will
+                                    be a proactive approach and a defensive one too. this could offer knowledge-based
+                                    inputs to the analyst to counter the probable security attacks and shield the system
+                                    from potential security risks.</p>
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp;A Security Operations Centre (SOC) is characterised each
+                                    as a group, typically operating in shifts round the clock, and a facility dedicated
+                                    to and arranged to stop, detect, judge and respond to cyber security threats and
+                                    incidents, and to fulfil and survey administrative compliance.</p>
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp; All these progressions within the innovation zone don't
+                                    dispose of the require for making the natural educated decisions by the human brain.
+                                    We still need to have security investigator to see into the occurrences and finalize
+                                    the activity plan. The life of these analysts will be made simple by liberating them
+                                    from the tedious unremarkable tasks and they can utilize their time and intelligence
+                                    in characterizing and executing the occurrence reaction arrange to decrease the
+                                    impact.</p>
+
+                                <h3>C) AI and machine learning can boost cyber defences</h3>
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp; As artificial intelligence and machine learning gathers
+                                    pace, and begins to affect increasingly businesses, it’s beyond any doubt to play a
+                                    greater part in cyber security. Since the fight with cyber criminals moves so
+                                    rapidly, machine learning models that can anticipate and accurately identify attacks
+                                    quickly may well be a genuine boon for InfoSec experts. These models got to be
+                                    prepared and sharpened. In any case, there's moreover a risk that AI and machine
+                                    learning may be misused by attackers</p>
+                                <p> &nbsp; &nbsp; &nbsp; &nbsp; According to a survey every month 7000 cyber crimes are
+                                    happened, but in national crime record bureau less than 1000 crimes have been
+                                    reported. So, there is huge mismatch between actual crime happen and crimes
+                                    reported. Cybercrime reporting in India is still in its nascent stage though cyber
+                                    violence is fast growing. Our laws need to be changed to make them cyber-sensitive
+                                    as well as gender-sensitive. Words like lascivious and prurient should be dropped
+                                    from the concerned Act to make them better secure women’s equality and dignity. The
+                                    perspective of the laws should be to ensure dignity of women and not being in a
+                                    paternalistic role. Cybercrimes against women needs a holistic approach with change
+                                    in laws, change in approach of officials and more intense sensitization campaigns
+                                    involving different sections of society. Indian women netizens are still not open to
+                                    quickly report the cyber mishandle or cyber-crime. This nature gives the guilty
+                                    parties the chance to elude after the commission of cyber-crime. The issue would be
+                                    unravelled only when the victimized woman at that point and there report back or
+                                    indeed caution the abuser around taking strong activities.</p>
+
+
+                                <blockquote class="blockquote">
+                                    <p class="mb-0">Progress is impossible without change, and those who cannot
+                                        change
+                                        their minds cannot
+                                        change anything.</p>
+                                    </p>
+                                </blockquote>
+
+                                <h4>For More Information visit my <a target="_blank"
+                                        href="https://github.com/KrishnaRanjani/Defence-on-Cyber-Crimes"
+                                        class="stretched-link">GitHub</a></h4>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="widget-sidebar sidebar-search">
+                            <h5 class="sidebar-title"> Security used to be an inconvenience sometimes, but now it’s a
+                                necessity all the time. </h5>
+                            <div class="sidebar-content">
+
+                            </div>
+                        </div>
+                        <div class="widget-sidebar">
+                            <h5 class="sidebar-title">Recent Post</h5>
+                            <div class="sidebar-content">
+                                <ul class="list-sidebar">
+                                    <li>
+                                        <a href="#">Medicine Tracking System</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Defence on cybercrime</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Material Point Method</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="widget-sidebar widget-tags">
+                            <h5 class="sidebar-title">Tags</h5>
+                            <div class="sidebar-content">
+                                <ul>
+                                    <li>    
+                                      <a href="#">cybersecurity</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">cybercrime</a>
+                                    </li>
+                                    <li>
+                                      <a href="#"> indian-laws</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">cyberprivacy</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">cyber-laws</a>
+                                    </li>
+                  
+                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Blog Single Section -->
+
+        <!-- ======= Blog Section ======= -->
+        <section id="blog" class="blog-mf sect-pt4 route">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="title-box text-center">
+                            <h3 class="title-a">
+                                Blog
+                            </h3>
+                            <h4 class="subtitle-a">
+                                The future belongs to those who believe in the beauty of their dreams
+                            </h4>
+                            <div class="line-mf"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-blog">
+                            <div class="card-img">
+                                <a href="blog-single.html"><img src="assets/img/post-1.jpg" alt=""
+                                        class="img-fluid"></a>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-category-box">
+                                    <div class="card-category">
+                                        <h6 class="category">Robotics</h6>
+                                    </div>
+                                </div>
+                                <h3 class="card-title"><a href="blog-single.html">Environmental Analysis Vechicle</a>
+                                </h3>
+                                <p class="card-description">
+                                    Environmental monitoring is indeed a review of the processes and activities
+                                    required to track the environmental baseline.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="post-author">
+                                    <a href="#">
+                                        <img src="assets/img/profilepic.jpg" alt="" class="avatar rounded-circle">
+                                        <span class="author">Krishnaranjani</span>
+                                    </a>
+                                </div>
+                                <div class="post-date">
+                                    <span class="bi bi-clock"></span> 5 min
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blog">
+                            <div class="card-img">
+                                <a href="blog-single.html"><img src="assets/img/post-2.jpg" alt=""
+                                        class="img-fluid"></a>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-category-box">
+                                    <div class="card-category">
+                                        <h6 class="category">IoT</h6>
+                                    </div>
+                                </div>
+                                <h3 class="card-title"><a href="blog-single.html">Medicine Tracking System</a></h3>
+                                <p class="card-description">
+                                    Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent
+                                    sapien massa, convallis
+                                    a pellentesque nec,
+                                    egestas non nisi.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="post-author">
+                                    <a href="#">
+                                        <img src="assets/img/profilepic.jpg" alt="" class="avatar rounded-circle">
+                                        <span class="author">Krishnaranjani</span>
+                                    </a>
+                                </div>
+                                <div class="post-date">
+                                    <span class="bi bi-clock"></span> 5 min
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blog">
+                            <div class="card-img">
+                                <a href="blog-single.html"><img src="assets/img/post-3.jpg" alt=""
+                                        class="img-fluid"></a>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-category-box">
+                                    <div class="card-category">
+                                        <h6 class="category">Machine Learning</h6>
+                                    </div>
+                                </div>
+                                <h3 class="card-title"><a href="blog-single.html">Defence on cybercrime</a></h3>
+                                <p class="card-description">
+                                    As the world is increasingly interconnected, everyone shares the responsibility of
+                                    securing
+                                    cyberspace.
+
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="post-author">
+                                    <a href="#">
+                                        <img src="assets/img/profilepic.jpg" alt="" class="avatar rounded-circle">
+                                        <span class="author">Krishnaranjani</span>
+                                    </a>
+                                </div>
+                                <div class="post-date">
+                                    <span class="bi bi-clock"></span> 5 min
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Blog Section -->
+
+
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="copyright-box">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/purecounter/purecounter.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.min.js"></script>
+
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
